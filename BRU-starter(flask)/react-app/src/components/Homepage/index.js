@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+import banner from '../bmw-banner.jpeg'
+import { findAllDiscussions } from '../../store/discussions'
+
+import './homepage.css'
 
 const HomePage = () => {
+  const dispatch = useDispatch()
+  const discussions = useSelector(state => state.discussion)
+
+  useEffect(async () => {
+    await dispatch(findAllDiscussions())
+  }, [dispatch])
+
   return (
-    <h1>My Home page</h1>
+    <img src={banner} alt="banner" className="banner_image"></img>
   );
 }
 
