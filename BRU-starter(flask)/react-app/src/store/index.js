@@ -3,12 +3,14 @@ import thunk from 'redux-thunk';
 import session from './session'
 import discussion from './discussions'
 import posts from './posts'
+import postCreate from './post_create'
 
 
 const rootReducer = combineReducers({
     session,
     discussion,
-    posts
+    posts,
+    postCreate
 });
 
 let enhancer;

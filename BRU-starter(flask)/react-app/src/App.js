@@ -10,6 +10,7 @@ import User from "./components/User";
 // import { authenticate } from "./services/auth";
 import { authenticate } from "./store/session";
 import HomePage from '../src/components/Homepage/index'
+import PostForm from '../src/components/auth/PostForm'
 
 function App() {
   // const [authenticated, setAuthenticated] = useState(false);
@@ -36,6 +37,9 @@ function App() {
         </Route>
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
+        </Route>
+        <Route path="/create-post" exact={true}>
+          <PostForm />
         </Route>
         <ProtectedRoute path="/users" exact={true} >
           <UsersList/>

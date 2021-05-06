@@ -35,9 +35,16 @@ const NavBar = () => {
         }
         {
           user ?
+          <>
+            <div>
+              <NavLink to="/create-post" exact={true} activeClassName="active">
+                Post Creation
+              </NavLink>
+            </div>
             <div>
               <LogoutButton />
             </div>
+          </>
           : " "
         }
       </div>
