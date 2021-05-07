@@ -12,7 +12,8 @@ import { authenticate } from "./store/session";
 import HomePage from '../src/components/Homepage/index'
 import PostForm from '../src/components/auth/PostForm'
 import CategoryNavbar from "./components/Navbar/CategoryNavbar";
-import DiscussionForm from '../src/components/auth/DiscussionForm'
+import DiscussionForm from '../src/components/auth/DiscussionForm';
+import PostPage from '../src/components/Posts/index'
 
 function App() {
   // const [authenticated, setAuthenticated] = useState(false);
@@ -47,9 +48,12 @@ function App() {
         <Route path="/create-discussion" exact={true}>
           <DiscussionForm />
         </Route>
-        <ProtectedRoute path="/users" exact={true} >
+        <Route path="/posts/:postId" exact={true}>
+          <PostPage />
+        </Route>
+        {/* <ProtectedRoute path="/users" exact={true} >
           <UsersList/>
-        </ProtectedRoute>
+        </ProtectedRoute> */}
         <ProtectedRoute path="/users/:userId" exact={true} >
           <User />
         </ProtectedRoute>
