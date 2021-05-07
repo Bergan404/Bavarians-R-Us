@@ -40,6 +40,11 @@ const NavBar = () => {
           user ?
           <>
             <div>
+              <NavLink to="/create-discussion" exact={true} activeClassName="active">
+                Discussion Creation
+              </NavLink>
+            </div>
+            <div>
               <NavLink to="/create-post" exact={true} activeClassName="active">
                 Post Creation
               </NavLink>
