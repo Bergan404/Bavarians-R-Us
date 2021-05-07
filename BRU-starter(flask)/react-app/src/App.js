@@ -11,6 +11,7 @@ import User from "./components/User";
 import { authenticate } from "./store/session";
 import HomePage from '../src/components/Homepage/index'
 import PostForm from '../src/components/auth/PostForm'
+import CategoryNavbar from "./components/Navbar/CategoryNavbar";
 
 function App() {
   // const [authenticated, setAuthenticated] = useState(false);
@@ -31,6 +32,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
+      <CategoryNavbar />
       <Switch>
         <Route path="/login" exact={true}>
           <LoginForm />

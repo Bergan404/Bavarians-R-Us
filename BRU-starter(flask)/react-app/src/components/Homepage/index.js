@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import banner from '../bmw-banner.jpeg'
 import { findAllDiscussions } from '../../store/discussions'
 import { findAllPosts } from '../../store/posts'
+import { findAllCategories } from '../../store/category'
 
 import './homepage.css'
 
@@ -13,11 +14,13 @@ const HomePage = () => {
   useEffect(async () => {
     await dispatch(findAllDiscussions())
     await dispatch(findAllPosts())
+    await dispatch(findAllCategories())
   }, [dispatch])
 
   return (
-    <img src={banner} alt="banner" className="banner_image"></img>
-  );
+    // <img src={banner} alt="banner" className="banner_image"></img>
+    <h1>beans</h1>
+  )
 }
 
 export default HomePage;
