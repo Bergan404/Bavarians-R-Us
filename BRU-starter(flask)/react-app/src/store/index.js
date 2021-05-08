@@ -4,6 +4,7 @@ import session from './session'
 import discussion from './discussions'
 import posts from './posts'
 import postCreate from './post_create'
+import discussionCreate from './discussion_create'
 import categories from './category'
 
 
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
     discussion,
     posts,
     postCreate,
+    discussionCreate,
     categories,
 });
 

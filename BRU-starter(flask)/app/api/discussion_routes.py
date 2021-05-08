@@ -16,14 +16,14 @@ def main():
 def create_discussions():
     form = DiscussionForm()
     if form.is_submitted():
-        discussion = Discussion(
+        discussions = Discussion(
             discussion_title=form.data['discussion_title'],
             body=form.data['body'],
             image=form.data['image'],
             userId=form.data['userId'],
             created_at=form.data['created_at'],
         )
-        db.session.add(discussion)
+        db.session.add(discussions)
         db.session.commit()
-        return discussion.to_dict()
+        return discussions.to_dict()
     return "did not go thru", 401

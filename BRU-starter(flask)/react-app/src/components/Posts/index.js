@@ -4,16 +4,17 @@ import { findAllCategories } from '../../store/category'
 import { NavLink } from 'react-router-dom';
 
 
-const PostPage = () => {
+const PostPage = (props) => {
     const dispatch = useDispatch()
+    let id = Number(window.location.pathname.slice(6))
     const posts = useSelector(state => state.posts)
+    const create = useSelector(state => state.createPost)
 
     console.log(posts)
 
     useEffect(async () => {
         await dispatch(findAllCategories())
     }, [dispatch])
-
 
     return (
         // <img src={banner} alt="banner" className="banner_image"></img>
