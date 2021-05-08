@@ -1,36 +1,30 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { findAllCategories } from '../../store/category'
-import { NavLink } from 'react-router-dom';
-import { findAllPosts } from '../../store/posts'
+import { NavLink, useParams } from 'react-router-dom';
+import { findOneDiscussion } from '../../store/oneDiscussion'
 
 
 
 const PostPage = (props) => {
     const dispatch = useDispatch()
     let id = Number(window.location.pathname.slice(6))
-    const posts = useSelector(state => state.posts)
+    const oneDiscussion = useSelector(state => state.oneDiscussion)
     const create = useSelector(state => state.createPost)
 
-    console.log(posts)
+    const { discussionId } = useParams();
+
 
     useEffect(async () => {
         await dispatch(findAllCategories())
-        await dispatch(findAllPosts())
+        await dispatch(findOneDiscussion(discussionId))
     }, [dispatch])
 
     return (
-        // <img src={banner} alt="banner" className="banner_image"></img>
         <>
-            <h1>Discussion page</h1>
-            <h2>{posts.post_title}</h2>
-            <img src={posts.image}></img>
-            <p>{posts.description}</p>
-            <p>{posts.year}, {posts.model}</p>
-            <p>{posts.price}</p>
-            <p>{posts.in_stock}</p>
-            <p>{posts.new_used}</p>
-            <p>{posts.categoryId}</p>
+            <h1>{oneDiscussion.discussion_title}</h1>
+            <img src={oneDiscussion.image}></img>
+            <p>{oneDiscussion.body}</p>
         </>
     )
 }

@@ -27,3 +27,9 @@ def create_discussions():
         db.session.commit()
         return discussions.to_dict()
     return "did not go thru", 401
+
+
+@dis_post.route('/<int:id>')
+def oneDiscussion(id):
+    discussion = Discussion.query.get(id)
+    return discussion.to_dict()

@@ -12,7 +12,13 @@ def seed_posts():
                      model="328i", price='302', in_stock="yes", new_used=True,
                      userId=1, categoryId='1', created_at=datetime.now())
 
+    second_post = Post(post_title="bmw part2", image='',
+                     description='nice and genuine bmw part', year='2008',
+                     model="328i", price='302', in_stock="yes", new_used=True,
+                     userId=1, categoryId='1', created_at=datetime.now())
+
     db.session.add(first_post)
+    db.session.add(second_post)
 
     db.session.commit()
 

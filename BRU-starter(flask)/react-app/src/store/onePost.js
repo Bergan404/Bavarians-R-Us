@@ -5,8 +5,8 @@ const onePost = (post) => ({
     payload: post
   })
 
-export const findOnePost = (postId) => async (dispatch) => {
-const response = await fetch(`/api/posts/${postId}`)
+export const findOnePost = (id) => async (dispatch) => {
+const response = await fetch(`/api/posts/${id}`)
 if (response.ok) {
     const post = await response.json();
     return dispatch(onePost(post));
