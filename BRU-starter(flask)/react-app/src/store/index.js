@@ -6,6 +6,7 @@ import posts from './posts'
 import postCreate from './post_create'
 import discussionCreate from './discussion_create'
 import categories from './category'
+import onePost from './onePost'
 
 
 const rootReducer = combineReducers({
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
     postCreate,
     discussionCreate,
     categories,
+    onePost,
 });
 
 let enhancer;

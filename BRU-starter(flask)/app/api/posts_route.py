@@ -34,3 +34,9 @@ def create_posts():
         db.session.commit()
         return post.to_dict()
     return "did not go thru", 401
+
+
+@posts.route('/<int:id>')
+def onePost(id):
+    post = Post.query.get(id)
+    return post.to_dict()

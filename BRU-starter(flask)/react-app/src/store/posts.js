@@ -17,6 +17,7 @@ export const findAllPosts = () => async (dispatch) => {
   return null
 }
 
+
 // reducer
 // const initialState = {};
 
