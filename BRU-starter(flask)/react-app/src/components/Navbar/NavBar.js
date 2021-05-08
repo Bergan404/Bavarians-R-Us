@@ -18,7 +18,7 @@ const NavBar = () => {
         <div className="nav_left">
           <NavLink to="/" exact={true} activeClassName="active" className="logo" >
             <img src={logo} alt='logo' className="logo-image" />
-            <h1 className="logo-text" >Bravarians"R"Us</h1>
+            <h1 className="logo-text" >Bravarians<p className="the-r">"R"</p>Us</h1>
           </NavLink>
         </div>
       </div>
@@ -26,33 +26,37 @@ const NavBar = () => {
         {
           user ? " " :
           <>
-          <div>
-            <NavLink to="/login" exact={true} activeClassName="active">
-              Login
-            </NavLink>
-          </div>
-          <div>
-            <NavLink to="/sign-up" exact={true} activeClassName="active">
-              Sign Up
-            </NavLink>
+          <div className="right-nav">
+            <div className="right-components">
+              <NavLink to="/login" exact={true} activeClassName="active">
+                Login
+              </NavLink>
+            </div>
+            <div className="right-components">
+              <NavLink to="/sign-up" exact={true} activeClassName="active">
+                Sign Up
+              </NavLink>
+            </div>
           </div>
           </>
         }
         {
           user ?
           <>
-            <div>
-              <NavLink to="/create-discussion" exact={true} activeClassName="active">
-                Discussion Creation
-              </NavLink>
-            </div>
-            <div>
-              <NavLink to="/create-post" exact={true} activeClassName="active">
-                Post Creation
-              </NavLink>
-            </div>
-            <div>
-              <LogoutButton />
+            <div className="right-nav" >
+              <div className="right-components" >
+                <NavLink to="/create-discussion" exact={true} activeClassName="active">
+                  Discussion Creation
+                </NavLink>
+              </div>
+              <div className="right-components" >
+                <NavLink to="/create-post" exact={true} activeClassName="active">
+                  Post Creation
+                </NavLink>
+              </div>
+              <div className="right-components" >
+                <LogoutButton />
+              </div>
             </div>
           </>
           : " "

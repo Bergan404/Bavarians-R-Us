@@ -12,14 +12,18 @@ const DiscussionForm = () => {
     // const [image, setImage] = useState(null);
     const [image, setImage] = useState('');
 
+    console.log(discussionTitle)
+    console.log(body)
+    console.log(image)
+
 
 
     const onDiscussionCreation = async (e) => {
         e.preventDefault();
         const data = await dispatch(discussionCreate(discussionTitle, body, image));
-        // if (data) {
-        //     history.push(`/server/${data.id}`);
-        // }
+        if (data) {
+            history.push(`/discussion/${data.id}`);
+        }
     }
 
     const updateTitle = (e) => {

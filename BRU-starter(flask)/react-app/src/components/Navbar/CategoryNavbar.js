@@ -11,11 +11,11 @@ const CategoryNavbar = () => {
   console.log(categories)
 
   return (
-    <nav className="nav_container">
-        <div>
+    <nav className="nav_container2">
+        <div className='category-display'>
             {
               categories?.length && categories.map((category) => (
-                <NavLink key={category.id} to={`/${category.id}`}>
+                <NavLink key={category.id} to={`/${category.id}`} className='category' >
                     {category.category}
                 </NavLink>
               ))

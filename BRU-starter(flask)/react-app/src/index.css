@@ -6,3 +6,12 @@
 html {
     scroll-behavior: smooth;
 }
+
+:root {
+	--black: #0b0c10;
+    --darkgray: #1f2833;
+    --lightgray: #c5c6c7;
+    --lightblue: #81c4ff;
+    --blue: #16588e;
+    --red: #e7222e;
+}

@@ -1,6 +1,7 @@
 .nav_container {
     display: flex;
     justify-content: space-between;
+    background-color: var(--lightgray);
 }
 .nav_right {
     display: flex;
@@ -19,6 +20,39 @@
     height: 50px;
 }
 .logo-text {
-    margin-top: 11px;
+    margin-top: 7px;
     margin-left: 5px;
+    font-size: 30px;
+    display: flex;
+}
+.the-r {
+    color: var(--blue);
+}
+.right-nav {
+    display: flex;
+    padding-top: 15px;
+}
+.right-components a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.right-components {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+.nav_container2 {
+    background-color: var(--darkgray);
+}
+.category-display {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
+}
+.category {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
 }

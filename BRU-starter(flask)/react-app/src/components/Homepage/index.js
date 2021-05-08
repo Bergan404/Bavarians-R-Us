@@ -24,9 +24,8 @@ const HomePage = () => {
   }, [dispatch])
 
   return (
-    // <img src={banner} alt="banner" className="banner_image"></img>
     <>
-      <h1>beans</h1>
+    {/* <img src={banner} alt="banner" className="banner_image"></img> */}
       <div>
         <NavLink to='/discussions'><h2>Discussions</h2></NavLink>
           {
