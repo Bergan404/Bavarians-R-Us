@@ -9,7 +9,9 @@ const DiscussionForm = () => {
     const [errors, setErrors] = useState([]);
     const [discussionTitle, setDiscussionTitle] = useState('')
     const [body, setBody] = useState('');
-    const [image, setImage] = useState(null);
+    // const [image, setImage] = useState(null);
+    const [image, setImage] = useState('');
+
 
 
     const onDiscussionCreation = async (e) => {

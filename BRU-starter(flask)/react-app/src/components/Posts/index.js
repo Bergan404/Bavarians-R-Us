@@ -1,16 +1,27 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { findAllCategories } from '../../store/category'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { findOnePost } from '../../store/onePost'
 
 
 
 const PostPage = (props) => {
     const dispatch = useDispatch()
-    const create = useSelector(state => state.createPost)
+    const [post, setPost] = useState({})
 
+    const { postId } = useParams();
 
+    useEffect(() => {
+        if (!postId) {
+            return
+        }
+        (async () => {
+            const response = await fetch(`/api/users/${postId}`);
+            const user = await response.json();
+            setPost(post);
+        })();
+    }, [postId]);
 
     useEffect(async () => {
         await dispatch(findAllCategories())
@@ -18,7 +29,6 @@ const PostPage = (props) => {
     }, [dispatch])
 
     return (
-        // <img src={banner} alt="banner" className="banner_image"></img>
         <>
             <h1>Post Page</h1>
             {/* <div>
@@ -32,14 +42,14 @@ const PostPage = (props) => {
                 ))
             }
             </div> */}
-            {/* <h2>{posts.post_title}</h2>
-            <img src={posts.image}></img>
-            <p>{posts.description}</p>
-            <p>{posts.year}, {posts.model}</p>
-            <p>{posts.price}</p>
-            <p>{posts.in_stock}</p>
-            <p>{posts.new_used}</p>
-            <p>{posts.categoryId}</p> */}
+            <h2>{post.post_title}</h2>
+            <img src={post.image}></img>
+            <p>{post.description}</p>
+            <p>{post.year}, {post.model}</p>
+            <p>{post.price}</p>
+            <p>{post.in_stock}</p>
+            <p>{post.new_used}</p>
+            <p>{post.categoryId}</p>
         </>
     )
 }

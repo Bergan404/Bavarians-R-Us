@@ -8,7 +8,8 @@ const PostForm = () => {
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
     const [postTitle, setPostTitle] = useState('');
-    const [image, setImage] = useState(null);
+    // const [image, setImage] = useState(null);
+    const [image, setImage] = useState('');
     const [description, setDescription] = useState('');
     const [year, setYear] = useState('');
     const [model, setModel] = useState('');
