@@ -7,18 +7,14 @@ import { findAllCategories } from '../../store/category'
 import { NavLink } from 'react-router-dom';
 
 
-import './homepage.css'
 
-const HomePage = () => {
+const AllPosts = () => {
   const dispatch = useDispatch()
-  const discussions = useSelector(state => state.discussion)
   const posts = useSelector(state => state.posts)
 
-  console.log(discussions)
   console.log(posts)
 
   useEffect(async () => {
-    await dispatch(findAllDiscussions())
     await dispatch(findAllPosts())
     await dispatch(findAllCategories())
   }, [dispatch])
@@ -26,21 +22,8 @@ const HomePage = () => {
   return (
     // <img src={banner} alt="banner" className="banner_image"></img>
     <>
-      <h1>beans</h1>
       <div>
-        <NavLink to='/discussions'><h2>Discussions</h2></NavLink>
-          {
-            discussions?.length && discussions.map((discussion) => (
-              <NavLink key={discussion.id} to={`/discussion/${discussion.id}`}>
-                  <h3>{discussion.discussion_title}</h3>
-                  <p>{discussion.body}</p>
-
-              </NavLink>
-            ))
-          }
-      </div>
-      <div>
-        <NavLink to='/posts'><h2>Posts</h2></NavLink>
+        <h2>All Posts</h2>
           {
             posts?.length && posts.map((post) => (
               <NavLink key={post.id} to={`/posts/${post.id}`}>
@@ -55,4 +38,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage;
+export default AllPosts;

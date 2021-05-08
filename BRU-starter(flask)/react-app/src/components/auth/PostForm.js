@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { postCreate } from '../../store/post_create'
 
 const PostForm = () => {
@@ -21,9 +21,9 @@ const PostForm = () => {
     const onPostCreation = async (e) => {
         e.preventDefault();
         const data = await dispatch(postCreate(postTitle, image, description, year, model, price, inStock, newUsed, categoryId));
-        // if (data) {
-        //     history.push(`/server/${data.id}`);
-        // }
+        if (data) {
+            history.push(`/posts/${data.id}`);
+        }
     }
 
     const updateTitle = (e) => {

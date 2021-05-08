@@ -22,18 +22,7 @@ const PostPage = (props) => {
     return (
         // <img src={banner} alt="banner" className="banner_image"></img>
         <>
-            <h1>Post Page</h1>
-            <div>
-            {
-                posts?.length && posts.map((post) => (
-                <NavLink key={post.id} to={`/posts/${post.id}`}>
-                    <h3>{post.post_title}</h3>
-                    <p>{post.description}</p>
-
-                </NavLink>
-                ))
-            }
-            </div>
+            <h1>Discussion page</h1>
             <h2>{posts.post_title}</h2>
             <img src={posts.image}></img>
             <p>{posts.description}</p>

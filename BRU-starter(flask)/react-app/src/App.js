@@ -14,6 +14,9 @@ import PostForm from '../src/components/auth/PostForm'
 import CategoryNavbar from "./components/Navbar/CategoryNavbar";
 import DiscussionForm from '../src/components/auth/DiscussionForm';
 import PostPage from '../src/components/Posts/index'
+import DiscussionPage from '../src/components/Discussion/index'
+import AllDiscussions from '../src/components/Discussion/all_discussions'
+import AllPosts from '../src/components/Posts/all_posts'
 
 function App() {
   // const [authenticated, setAuthenticated] = useState(false);
@@ -50,6 +53,15 @@ function App() {
         </Route>
         <Route path="/posts/:postId" exact={true}>
           <PostPage />
+        </Route>
+        <Route path="/discussion/:discussionId" exact={true}>
+          <DiscussionPage />
+        </Route>
+        <Route path="/discussions" exact={true}>
+          <AllDiscussions />
+        </Route>
+        <Route path="/posts" exact={true}>
+          <AllPosts />
         </Route>
         {/* <ProtectedRoute path="/users" exact={true} >
           <UsersList/>
