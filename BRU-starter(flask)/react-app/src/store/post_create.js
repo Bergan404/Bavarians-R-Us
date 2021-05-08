@@ -1,26 +1,26 @@
 const CREATE_POST = 'post_create/CREATE_POST';
-// const DELETE_SERVER = 'server_delete/DELETE_SERVER';
+const DELETE_POST = 'post_delete/DELETE_POST';
 
 const createPost = (post) => ({
     type: CREATE_POST,
     payload: post
 })
 
-// const deleteServer = () => ({
-//     type: DELETE_SERVER
-// })
+const deletePost = () => ({
+    type: DELETE_POST
+})
 
 
-// export const delExistingServer = (serverId) => async (dispatch) => {
-//     await fetch('/api/server/', {
-//         method: "DELETE",
-//         headers: {
-//             "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(serverId)
-//     })
-//     dispatch(deleteServer())
-// }
+export const delExistingPost = (postId) => async (dispatch) => {
+    await fetch('/api/posts/', {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postId)
+    })
+    dispatch(deletePost())
+}
 
 
 
@@ -53,9 +53,9 @@ export default function createReducer(state = { create: {} }, action) {
 
         case CREATE_POST:
             return action.payload;
-        // case DELETE_SERVER:
-        //     state = {}
-        //     return state
+        case DELETE_POST:
+            state = {}
+            return state
         default:
             return state;
 

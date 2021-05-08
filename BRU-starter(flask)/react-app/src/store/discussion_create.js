@@ -1,26 +1,26 @@
 const CREATE_DISCUSSION = 'discussion_create/CREATE_DISCUSSION';
-// const DELETE_SERVER = 'server_delete/DELETE_SERVER';
+const DELETE_DISCUSSION = 'discussion_delete/DELETE_DISCUSSION';
 
 const createDiscussion = (discussion) => ({
     type: CREATE_DISCUSSION,
     payload: discussion
 })
 
-// const deleteServer = () => ({
-//     type: DELETE_SERVER
-// })
+const deleteDiscussion = () => ({
+    type: DELETE_DISCUSSION
+})
 
 
-// export const delExistingServer = (serverId) => async (dispatch) => {
-//     await fetch('/api/server/', {
-//         method: "DELETE",
-//         headers: {
-//             "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(serverId)
-//     })
-//     dispatch(deleteServer())
-// }
+export const delExistingDiscussion = (discussionId) => async (dispatch) => {
+    await fetch('/api/discussion/', {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(discussionId)
+    })
+    dispatch(deleteDiscussion())
+}
 
 
 
@@ -48,9 +48,9 @@ export default function createReducer(state = { create: {} }, action) {
 
         case CREATE_DISCUSSION:
             return action.payload;
-        // case DELETE_SERVER:
-        //     state = {}
-        //     return state
+        case DELETE_DISCUSSION:
+            state = {}
+            return state
         default:
             return state;
 

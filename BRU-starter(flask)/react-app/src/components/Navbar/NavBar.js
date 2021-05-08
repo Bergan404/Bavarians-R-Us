@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
+import logo from '../bmw-logo.png'
 
 import './navbar.css'
 
@@ -15,8 +16,9 @@ const NavBar = () => {
     <nav className="nav_container">
       <div>
         <div className="nav_left">
-          <NavLink to="/" exact={true} activeClassName="active">
-            Home
+          <NavLink to="/" exact={true} activeClassName="active" className="logo" >
+            <img src={logo} alt='logo' className="logo-image" />
+            <h3>Bravarians"R"Us</h3>
           </NavLink>
         </div>
       </div>

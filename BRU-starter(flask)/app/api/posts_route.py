@@ -40,3 +40,11 @@ def create_posts():
 def onePost(id):
     post = Post.query.get(id)
     return post.to_dict()
+
+
+@posts.route('/', methods=['DELETE'])
+def delete_post():
+    postId = request.json
+    post = Post.query.get(postId)
+    db.session.delete(post)
+    db.session.commit()

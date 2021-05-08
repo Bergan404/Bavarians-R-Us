@@ -33,3 +33,11 @@ def create_discussions():
 def oneDiscussion(id):
     discussion = Discussion.query.get(id)
     return discussion.to_dict()
+
+
+@dis_post.route('/', methods=['DELETE'])
+def delete_discussion():
+    discussionId = request.json
+    discussion = Discussion.query.get(discussionId)
+    db.session.delete(discussion)
+    db.session.commit()

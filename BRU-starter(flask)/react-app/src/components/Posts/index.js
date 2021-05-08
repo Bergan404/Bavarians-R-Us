@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { findAllCategories } from '../../store/category'
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useHistory, useParams } from 'react-router-dom';
 import { findOnePost } from '../../store/onePost'
+import { delExistingPost } from '../../store/post_create'
 
 
 
 const PostPage = (props) => {
+    const history = useHistory()
     const dispatch = useDispatch()
     const onePost = useSelector(state => state.onePost)
+    const userId = useSelector(state => state.session.user.id)
 
     const { postId } = useParams();
 
@@ -17,8 +20,15 @@ const PostPage = (props) => {
         await dispatch(findOnePost(postId))
     }, [dispatch])
 
+    const handleDelete = async (e) => {
+		e.preventDefault();
+		dispatch(delExistingPost(onePost.id));
+		await history.push("/");
+	};
+
     return (
         <>
+            {onePost.userId === userId?<button className="delete-button" onClick={handleDelete} >Delete</button>: null}
             <h1>{onePost.post_title}</h1>
             <img src={onePost.image}></img>
             <p>{onePost.description}</p>

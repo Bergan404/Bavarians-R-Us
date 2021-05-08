@@ -11,7 +11,12 @@ def seed_discussions():
                                  body="what a car kinda crazy how cool they are!",
                                  image='', userId=1, created_at=datetime.now())
 
+    second_discussion = Discussion(discussion_title='my car got alot of miles',
+                                 body="what a car kinda crazy how cool they are!, this is one of the best cars that I have ever owned in my life kinda silly me saying that but it really is true",
+                                 image='', userId=2, created_at=datetime.now())
+
     db.session.add(first_discussion)
+    db.session.add(second_discussion)
 
     db.session.commit()
 
