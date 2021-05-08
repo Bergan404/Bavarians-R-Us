@@ -18,7 +18,7 @@ const NavBar = () => {
         <div className="nav_left">
           <NavLink to="/" exact={true} activeClassName="active" className="logo" >
             <img src={logo} alt='logo' className="logo-image" />
-            <h3>Bravarians"R"Us</h3>
+            <h1 className="logo-text" >Bravarians"R"Us</h1>
           </NavLink>
         </div>
       </div>
