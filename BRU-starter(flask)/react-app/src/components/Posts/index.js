@@ -27,7 +27,7 @@ const PostPage = (props) => {
     const handleCartAdd = (e) => {
         e.preventDefault();
 
-        dispatch(addThePost(postId))
+        dispatch(addThePost(parseInt(postId)))
         history.push(`/cart/${userId}`)
     }
 

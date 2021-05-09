@@ -9,13 +9,20 @@ export const addPost = (post) => {
 
 
 export const addThePost = (id) => async dispatch => {
-    const response = await fetch(`/api/cart/${id}`);
+    const response = await fetch(`/api/cart/${id}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            postId:id
+        }),
+    });
 
     if (response.ok) {
         const post = await response.json();
         dispatch(addPost(post))
-    } else {
-    }
+    } 
 }
 
 

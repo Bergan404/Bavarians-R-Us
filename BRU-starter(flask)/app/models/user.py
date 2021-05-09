@@ -81,7 +81,8 @@ class Post(db.Model):
             "new_used": self.new_used,
             "userId": self.userId,
             "categoryId": self.categoryId,
-            "created_at": self.created_at
+            "created_at": self.created_at,
+            'reviews': [review.to_dict() for review in self.user_post]
         }
 
 # ------------------------------Discussions Table ----------------------------------

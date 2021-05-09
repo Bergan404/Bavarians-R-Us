@@ -3,6 +3,7 @@ from app.models import db
 from app.models.user import Post
 from app.forms import PostForm
 from datetime import datetime
+from flask_login import current_user
 
 posts = Blueprint('post', __name__)
 
@@ -16,6 +17,8 @@ def main():
 @posts.route('/create', methods=['POST'])
 def create_posts():
     form = PostForm()
+    form['userId'].data = current_user.id
+    form['csrf_token'].data = request.cookies['csrf_token']
     if form.is_submitted():
         post = Post(
             post_title=form.data['post_title'],

@@ -6,6 +6,8 @@ import { postCreate } from '../../store/post_create'
 const PostForm = () => {
     const history = useHistory()
     const dispatch = useDispatch();
+    const categories = useSelector(state => state.categories.categories)
+
     const [errors, setErrors] = useState([]);
     const [postTitle, setPostTitle] = useState('');
     // const [image, setImage] = useState(null);
@@ -15,7 +17,7 @@ const PostForm = () => {
     const [model, setModel] = useState('');
     const [price, setPrice] = useState('');
     const [inStock, setInStock] = useState('');
-    const [categoryId, setCategoryId] = useState('');
+    const [categoryId, setCategoryId] = useState("");
     const [newUsed, setNewUsed] = useState(false);
 
 
@@ -59,6 +61,10 @@ const PostForm = () => {
 
     const updateNewUsed = (e) => {
         setNewUsed(e.target.value);
+    }
+
+    const updateCategory = (e) => {
+        setCategoryId(e.target.value);
     }
 
     return (
@@ -150,6 +156,20 @@ const PostForm = () => {
                     onChange={updateNewUsed}
                     className='server_input_checkbox'
                 />
+            </div>
+            <div>
+                <label>Category</label>
+                <select
+                    name='category'
+                    value={categoryId}
+                    onChange={updateCategory}
+                >
+                    {
+                        categories?.length && categories.map((category) => (
+                            <option value={category.id} >{category.category}</option>
+                        ))
+                    }
+                </select>
             </div>
             <div className="create">
                 <button className="server-button" type="submit">Create Post</button>

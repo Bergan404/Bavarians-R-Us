@@ -1,7 +1,7 @@
 .nav_container {
     display: flex;
     justify-content: space-between;
-    background-color: var(--lightgray);
+    /* background-color: var(--lightgray); */
 }
 .nav_right {
     display: flex;

@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify, session, request
 from app.models import db
 from app.models.user import Discussion
 from app.forms import DiscussionForm
+from flask_login import current_user
 
 dis_post = Blueprint('discussion', __name__)
 
@@ -15,6 +16,8 @@ def main():
 @dis_post.route('/create', methods=['POST'])
 def create_discussions():
     form = DiscussionForm()
+    form['userId'].data = current_user.id
+    form['csrf_token'].data = request.cookies['csrf_token']
     if form.is_submitted():
         discussions = Discussion(
             discussion_title=form.data['discussion_title'],

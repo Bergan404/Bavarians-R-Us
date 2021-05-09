@@ -24,11 +24,11 @@ export const delExistingPost = (postId) => async (dispatch) => {
 
 
 
-export const postCreate = (post_title, image, description, year, model, price, in_stock, new_used, userId, categoryId) => async (dispatch) => {
+export const postCreate = (post_title, image, description, year, model, price, in_stock, new_used, categoryId) => async (dispatch) => {
     const response = await fetch("/api/posts/create", {
         method: "POST",
         headers: {
-            "Content-Type": "multipart/form-data",
+            "Content-Type": "application/json",
         },
         body: JSON.stringify({
             post_title,
@@ -39,7 +39,6 @@ export const postCreate = (post_title, image, description, year, model, price, i
             price,
             in_stock,
             new_used,
-            userId,
             categoryId
         }),
     });

@@ -28,7 +28,7 @@ const ReviewPage = (props) => {
     return (
         <div>
             {
-            reviews?.length && reviews.map((review) =>(
+            onePost.reviews?.length && onePost.reviews.map((review) =>(
                 <p>{review.body}</p>
             ))
           }

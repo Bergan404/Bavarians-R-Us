@@ -28,7 +28,7 @@ export const discussionCreate = (discussion_title, body, image, userId, created_
     const response = await fetch("/api/discussion/create", {
         method: "POST",
         headers: {
-            "Content-Type": "multipart/form-data",
+            "Content-Type": "application/json",
         },
         body: JSON.stringify({
             discussion_title,
