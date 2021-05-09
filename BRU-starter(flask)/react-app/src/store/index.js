@@ -8,6 +8,8 @@ import discussionCreate from './discussion_create'
 import categories from './category'
 import onePost from './onePost'
 import oneDiscussion from './oneDiscussion'
+import addThePost from './add_post'
+import reviews from './reviews'
 
 
 const rootReducer = combineReducers({
@@ -19,6 +21,8 @@ const rootReducer = combineReducers({
     categories,
     onePost,
     oneDiscussion,
+    addThePost,
+    reviews
 });
 
 let enhancer;

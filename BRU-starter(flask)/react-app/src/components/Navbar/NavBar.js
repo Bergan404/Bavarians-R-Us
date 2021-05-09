@@ -55,6 +55,11 @@ const NavBar = () => {
                 </NavLink>
               </div>
               <div className="right-components" >
+                <NavLink to={`/cart/${user.id}`} exact={true} activeClassName="active">
+                  Cart
+                </NavLink>
+              </div>
+              <div className="right-components" >
                 <LogoutButton />
               </div>
             </div>
