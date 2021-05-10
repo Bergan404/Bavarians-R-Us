@@ -33,7 +33,7 @@ const HomePage = () => {
           <NavLink to='/discussions' className="all_discussions" ><img src={stripes} alt="stripes"/><h2>Discussions</h2></NavLink>
             <div className="homepage_discussions" >
               {
-                discussions?.length && discussions.map((discussion) => (
+                discussions?.length && discussions.slice(0, 6).map((discussion) => (
                   <div className="each_discussion" >
                     <NavLink key={discussion.id} to={`/discussion/${discussion.id}`} >
                         <h3 className="discussion_title" >{discussion.discussion_title}</h3>
@@ -50,7 +50,7 @@ const HomePage = () => {
           <NavLink to='/posts' className="all_posts" ><img src={stripes} alt="stripes"/><h2>Posts</h2></NavLink>
             <div className="homepage_posts" >
               {
-                posts?.length && posts.map((post) => (
+                posts?.length && posts.slice(0, 3).map((post) => (
                   <div className="each_post">
                     <NavLink key={post.id} to={`/posts/${post.id}`}>
                         <img src={post.image ? post.image : defaultImage}  alt="post-image" />
