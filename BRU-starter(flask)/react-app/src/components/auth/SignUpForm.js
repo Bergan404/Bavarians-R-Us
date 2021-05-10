@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 
+import './login-signup.css';
+
 const SignUpForm = () => {
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
@@ -39,45 +41,49 @@ const SignUpForm = () => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
-      <div>
-        <label>User Name</label>
+    <form onSubmit={onSignUp} className="signup_form" >
+      <div className="signup_divs" >
+        <label className="signup_labels" >User Name</label>
         <input
           type="text"
           name="username"
           onChange={updateUsername}
           value={username}
+          className="signup_inputs"
         ></input>
       </div>
-      <div>
-        <label>Email</label>
+      <div className="signup_divs">
+        <label className="signup_labels">Email</label>
         <input
           type="text"
           name="email"
           onChange={updateEmail}
           value={email}
+          className="signup_inputs"
         ></input>
       </div>
-      <div>
-        <label>Password</label>
+      <div className="signup_divs">
+        <label className="signup_labels">Password</label>
         <input
           type="password"
           name="password"
           onChange={updatePassword}
           value={password}
+          className="signup_inputs"
         ></input>
       </div>
-      <div>
-        <label>Repeat Password</label>
+      <div className="signup_divs">
+        <label className="signup_labels">Repeat Password</label>
         <input
           type="password"
           name="repeat_password"
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
+          className="signup_inputs"
         ></input>
       </div>
-      <button type="submit">Sign Up</button>
+      <button type="submit" className="signup_signup" >Sign Up</button>
     </form>
   );
 };

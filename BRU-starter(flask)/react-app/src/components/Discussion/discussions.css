@@ -1,0 +1,20 @@
+.stripes {
+    position: relative;
+    width: 90px;
+    left: 34.3em;
+    top: 35px;
+}
+.all_discussions_page {
+    text-align: center;
+}
+.homepage_discussions_page {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /* background-color: var(--lightgray); */
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+}

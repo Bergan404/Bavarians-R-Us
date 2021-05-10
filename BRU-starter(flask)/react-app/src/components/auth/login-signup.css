@@ -11,6 +11,18 @@
     background-color: var(--lightgray);
     padding: 20px;
     text-align: center;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+@keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		}
 }
 .login_divs {
     margin-top: 10px;
@@ -71,4 +83,60 @@
     text-decoration: none;
     color: black;
     font-size: 15px;
+}
+
+
+.signup_form {
+    width: 500px;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    background-color: var(--lightgray);
+    padding: 20px;
+    text-align: center;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		}
+}
+.signup_divs {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.signup_labels {
+    text-align: center;
+    font-size: 25px;
+    color: var(--blue);
+}
+.signup_inputs {
+    width: 99%;
+    padding: 5px;
+    font-size: 17px;
+    border-radius: 24px;
+    border: none;
+}
+.signup_signup {
+    padding: 5px;
+    color: white;
+    background: none;
+    border: none;
+    border: 1px solid var(--blue);
+    border-radius: 24px;
+    background-color: var(--blue);
+    font-size: 17px;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: background-color .3s ease-in-out;
+}
+.signup_signup:hover {
+    cursor: pointer;
+    background-color: var(--red);
 }

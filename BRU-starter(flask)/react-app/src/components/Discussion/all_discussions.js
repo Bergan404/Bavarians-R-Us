@@ -4,6 +4,11 @@ import { findAllDiscussions } from '../../store/discussions'
 import { findAllPosts } from '../../store/posts'
 import { findAllCategories } from '../../store/category'
 import { NavLink } from 'react-router-dom';
+import defaultImage from '../default_image.png'
+import stripes from '../stripes.png'
+
+
+import './discussions.css';
 
 
 const AllDiscussions = () => {
@@ -21,16 +26,21 @@ const AllDiscussions = () => {
     // <img src={banner} alt="banner" className="banner_image"></img>
     <>
       <div>
-        <h2>All Discussions</h2>
-          {
-            discussions?.length && discussions.map((discussion) => (
-              <NavLink key={discussion.id} to={`/discussion/${discussion.id}`}>
-                  <h3>{discussion.discussion_title}</h3>
-                  <p>{discussion.body}</p>
+        <img src={stripes} alt="stripes" className="stripes"/><h1 className="all_discussions_page" >All Discussions</h1>
+          <div className="homepage_discussions_page">
+            {
+              discussions?.length && discussions.map((discussion) => (
+                <div className="each_discussion">
+                  <NavLink key={discussion.id} to={`/discussion/${discussion.id}`}>
+                      <h3>{discussion.discussion_title}</h3>
+                      <img src={discussion.image ? discussion.image : defaultImage}  alt="discussion-image"/>
+                      <p>{discussion.body}</p>
 
-              </NavLink>
-            ))
-          }
+                  </NavLink>
+                </div>
+              ))
+            }
+          </div>
       </div>
     </>
   )

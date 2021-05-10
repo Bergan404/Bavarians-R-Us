@@ -1,0 +1,20 @@
+.all_posts_page {
+    text-align: center;
+}
+.stripes1 {
+    position: relative;
+    width: 90px;
+    left: 37.5em;
+    top: 35px;
+}
+.homepage_posts_page {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /* background-color: var(--lightgray); */
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+}

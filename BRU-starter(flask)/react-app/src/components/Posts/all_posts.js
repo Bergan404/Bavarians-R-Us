@@ -4,7 +4,10 @@ import { findAllDiscussions } from '../../store/discussions'
 import { findAllPosts } from '../../store/posts'
 import { findAllCategories } from '../../store/category'
 import { NavLink } from 'react-router-dom';
+import defaultImage from '../default_image.png'
+import stripes from '../stripes.png'
 
+import './posts.css';
 
 
 const AllPosts = () => {
@@ -19,19 +22,22 @@ const AllPosts = () => {
   }, [dispatch])
 
   return (
-    // <img src={banner} alt="banner" className="banner_image"></img>
     <>
       <div>
-        <h2>All Posts</h2>
+        <img src={stripes} alt="stripes" className="stripes1" /><h1 className="all_posts_page">All Posts</h1>
+        <div className="homepage_posts_page">
           {
             posts?.length && posts.map((post) => (
-              <NavLink key={post.id} to={`/posts/${post.id}`}>
+              <div className="each_post">
+                <NavLink key={post.id} to={`/posts/${post.id}`}>
+                  <img src={post.image ? post.image : defaultImage} alt="post-image" />
                   <h3>{post.post_title}</h3>
                   <p>{post.description}</p>
-
-              </NavLink>
+                </NavLink>
+              </div>
             ))
           }
+        </div>
       </div>
     </>
   )
