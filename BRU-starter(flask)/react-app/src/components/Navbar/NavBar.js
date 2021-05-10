@@ -27,12 +27,12 @@ const NavBar = () => {
           user ? " " :
           <>
           <div className="right-nav">
-            <div className="right-components">
+            <div className="right-components2">
               <NavLink to="/login" exact={true} activeClassName="active">
                 Login
               </NavLink>
             </div>
-            <div className="right-components">
+            <div className="right-components2">
               <NavLink to="/sign-up" exact={true} activeClassName="active">
                 Sign Up
               </NavLink>

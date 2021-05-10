@@ -1,7 +1,11 @@
 .nav_container {
     display: flex;
     justify-content: space-between;
-    /* background-color: var(--lightgray); */
+    background-color: white;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .nav_right {
     display: flex;
@@ -14,6 +18,10 @@
     display: flex;
     text-decoration: none;
     color: black;
+    transition: color .3s ease-in-out;
+}
+.logo:hover {
+    color: var(--red);
 }
 .logo-image {
     width: 50px;
@@ -36,19 +44,48 @@
     text-decoration: none;
     color: black;
     font-size: 20px;
+    transition: color .3s ease-in-out;
+}
+.right-components a:hover {
+    color: var(--red);
 }
 .right-components {
-    /* margin-left: 5px;
-    margin-right: 5px; */
     padding-right: 6px;
     padding-left: 6px;
-    
-    border-right: 3px solid black;
+    height: 20px;
+    border-right: 2px solid black;
+}
+.right-components1 {
+    padding-left: 6px;
+}
+.right-components2 a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.right-components2:hover {
+    background-color: var(--red);
+    cursor: pointer;
+}
+.right-components2 {
+    padding: 6px;
+    border: 1px solid var(--blue);
+    border-radius: 24px;
+    background-color: var(--lightblue);
+    position: relative;
+    bottom: 5px;
+    margin-left: 6px;
+    margin-right: 6px;
+    transition: background-color .3s ease-in-out;
 }
 
 
 .nav_container2 {
     background-color: var(--darkgray);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 90px;
+    z-index: 1;
 }
 .category-display {
     display: flex;

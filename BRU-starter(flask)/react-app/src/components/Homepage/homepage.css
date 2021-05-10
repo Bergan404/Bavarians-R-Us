@@ -9,16 +9,16 @@
     text-decoration: none;
     color: black;
     text-align: center;
+    z-index:1;
 }
 .all_discussions h2 {
-    margin-top: 20px;
     font-size: 40px;
 }
 .all_discussions img {
-    position: absolute;
+    position: relative;
     width: 90px;
-    left: 23em;
-    bottom: 111px;
+    left: 21em;
+    top: 40px;
 }
 .homepage_discussions {
     display: flex;
@@ -73,12 +73,13 @@
 }
 .all_posts img {
     width: 90px;
-    position: absolute;
-    bottom: 111px;
-    right: 13em;
+    position: relative;
+    left: 48px;
+    top: 40px;
+
 }
 .all_posts h2 {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     font-size: 40px;
 }
 .homepage_posts {
