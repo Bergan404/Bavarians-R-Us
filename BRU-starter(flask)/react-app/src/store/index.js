@@ -10,6 +10,7 @@ import onePost from './onePost'
 import oneDiscussion from './oneDiscussion'
 import addThePost from './add_post'
 import reviews from './reviews'
+import oneCategory from './oneCategory'
 
 
 const rootReducer = combineReducers({
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
     categories,
     onePost,
     oneDiscussion,
+    oneCategory,
     addThePost,
     reviews
 });

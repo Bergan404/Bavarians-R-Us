@@ -183,7 +183,8 @@ class Category(db.Model):
         return {
             "id": self.id,
             "category": self.category,
-            "created_at": self.created_at
+            "created_at": self.created_at,
+            "posts": [post.to_dict() for post in self.post_category],
         }
 
 # ------------------------------ShoppingCart Table ----------------------------------

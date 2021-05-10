@@ -5,16 +5,15 @@ const createReview = (review) => ({
     payload: review
 })
 
-export const reviewCreate = (userId, postId, body, created_at) => async (dispatch) => {
+export const reviewCreate = (body, postId, created_at) => async (dispatch) => {
     const response = await fetch("/api/reviews/create", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            userId,
-            postId,
             body,
+            postId,
             created_at
         }),
     });

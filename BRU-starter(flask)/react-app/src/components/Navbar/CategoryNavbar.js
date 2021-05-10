@@ -15,7 +15,7 @@ const CategoryNavbar = () => {
         <div className='category-display'>
             {
               categories?.length && categories.map((category) => (
-                <NavLink key={category.id} to={`/${category.id}`} className='category' >
+                <NavLink key={category.id} to={`/category/${category.id}`} className='category' >
                     {category.category}
                 </NavLink>
               ))

@@ -19,11 +19,9 @@ const ReviewForm = () => {
 
 
     const onReviewCreation = async (e) => {
-        e.preventDefault();
-        const data = await dispatch(reviewCreate(body, postId));
-        if (data) {
+        // e.preventDefault();
+        await dispatch(reviewCreate(body, postId));
 
-        }
     }
 
     const updateBody = (e) => {

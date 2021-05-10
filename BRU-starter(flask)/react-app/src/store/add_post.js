@@ -22,14 +22,14 @@ export const addThePost = (id) => async dispatch => {
     if (response.ok) {
         const post = await response.json();
         dispatch(addPost(post))
-    } 
+    }
 }
 
 
-export default function reducer(state = {}, action){
+export default function reducer(state = [], action){
     switch(action.type) {
         case ADD_POST:
-            return action.payload
+            return[...state, action.payload]
         default:
             return state;
     }

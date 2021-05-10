@@ -9,3 +9,9 @@ category = Blueprint('category', __name__)
 def main():
     categories = Category.query.all()
     return {"categories": [category.to_dict() for category in categories]}
+
+
+@category.route('/<int:id>')
+def oneCategory(id):
+    category = Category.query.get(id)
+    return category.to_dict()
