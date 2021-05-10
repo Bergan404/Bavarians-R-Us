@@ -19,7 +19,7 @@ export const delExistingDiscussion = (discussionId) => async (dispatch) => {
         },
         body: JSON.stringify(discussionId)
     })
-    dispatch(deleteDiscussion())
+    dispatch(deleteDiscussion(discussionId))
 }
 
 
@@ -63,8 +63,9 @@ export default function createReducer(state = { create: {} }, action) {
         case CREATE_DISCUSSION:
             return action.payload;
         case DELETE_DISCUSSION:
-            state = {}
-            return state
+            const newState = {...state}
+            delete newState[action.payload]
+            return newState
         default:
             return state;
 

@@ -14,6 +14,7 @@ from .api.posts_route import posts
 from .api.category_routes import category
 from .api.cart_routes import cart
 from .api.reviews_routes import reviews
+from .api.reply_routes import replies
 
 from .seeds import seed_commands
 
@@ -42,6 +43,7 @@ app.register_blueprint(posts, url_prefix='/api/posts')
 app.register_blueprint(category, url_prefix='/api/categories')
 app.register_blueprint(cart, url_prefix='/api/cart')
 app.register_blueprint(reviews, url_prefix='/api/reviews')
+app.register_blueprint(replies, url_prefix='/api/replies')
 db.init_app(app)
 Migrate(app, db)
 

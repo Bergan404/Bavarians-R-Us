@@ -1,6 +1,5 @@
 from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired, ValidationError
-from app.models.user import Discussion
 from datetime import datetime
 from wtforms import DateField, IntegerField, TextAreaField
 

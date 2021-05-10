@@ -59,7 +59,7 @@ const NavBar = () => {
                   Cart
                 </NavLink>
               </div>
-              <div className="right-components" >
+              <div className="right-components1" >
                 <LogoutButton />
               </div>
             </div>

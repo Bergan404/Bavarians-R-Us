@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import banner from '../bmw-banner.jpeg'
 import { findAllDiscussions } from '../../store/discussions'
 import { findAllPosts } from '../../store/posts'
 import { findAllCategories } from '../../store/category'

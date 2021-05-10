@@ -38,8 +38,12 @@
     font-size: 20px;
 }
 .right-components {
-    margin-left: 5px;
-    margin-right: 5px;
+    /* margin-left: 5px;
+    margin-right: 5px; */
+    padding-right: 6px;
+    padding-left: 6px;
+    
+    border-right: 3px solid black;
 }
 
 
@@ -55,4 +59,20 @@
     text-decoration: none;
     color: white;
     font-size: 17px;
+}
+.logout_button {
+    position: relative;
+    bottom: 5px;
+    padding: 5px;
+    border-radius: 24px;
+    background: none;
+    border: none;
+    border: 1px solid var(--blue);
+    background-color: var(--lightblue);
+    font-size: 17px;
+    transition: background-color .3s ease-in-out;
+}
+.logout_button:hover {
+    background-color: var(--red);
+    cursor: pointer;
 }

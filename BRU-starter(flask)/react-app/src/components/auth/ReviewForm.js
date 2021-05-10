@@ -9,7 +9,7 @@ const ReviewForm = () => {
     const history = useHistory()
     const dispatch = useDispatch();
     // const [errors, setErrors] = useState([]);
-    const [body, setBody] = useState('');
+    const [body, setBody] = useState();
 
     const { postId } = useParams();
 

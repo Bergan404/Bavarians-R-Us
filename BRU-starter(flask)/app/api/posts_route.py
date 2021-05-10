@@ -59,3 +59,5 @@ def delete_post():
     post = Post.query.get(postId)
     db.session.delete(post)
     db.session.commit()
+    posts = Post.query.all()
+    return {"posts": [post.to_dict() for post in posts]}

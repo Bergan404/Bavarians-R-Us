@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import banner from '../bmw-banner.jpeg'
 import { findAllDiscussions } from '../../store/discussions'
 import { findAllPosts } from '../../store/posts'
 import { findAllCategories } from '../../store/category'
 import { NavLink } from 'react-router-dom';
+import banner1 from '../bmw-banner2.png'
+import defaultImage from '../default_image.png'
+import stripes from '../stripes.png'
 
 
 import './homepage.css'
@@ -24,33 +26,45 @@ const HomePage = () => {
   }, [dispatch])
 
   return (
-    <>
-    {/* <img src={banner} alt="banner" className="banner_image"></img> */}
-      <div>
-        <NavLink to='/discussions'><h2>Discussions</h2></NavLink>
-          {
-            discussions?.length && discussions.map((discussion) => (
-              <NavLink key={discussion.id} to={`/discussion/${discussion.id}`}>
-                  <h3>{discussion.discussion_title}</h3>
-                  <p>{discussion.body}</p>
+    <div>
+      <img src={banner1} alt="banner" className="banner_image"></img>
+      <div className='dis_post_container' >
+        <div>
+          <NavLink to='/discussions' className="all_discussions" ><img src={stripes} alt="stripes"/><h2>Discussions</h2></NavLink>
+            <div className="homepage_discussions" >
+              {
+                discussions?.length && discussions.map((discussion) => (
+                  <div className="each_discussion" >
+                    <NavLink key={discussion.id} to={`/discussion/${discussion.id}`} >
+                        <h3 className="discussion_title" >{discussion.discussion_title}</h3>
+                        <img src={discussion.image ? discussion.image : defaultImage}  alt="discussion-image"/>
+                        <p>{discussion.body}</p>
 
-              </NavLink>
-            ))
-          }
-      </div>
-      <div>
-        <NavLink to='/posts'><h2>Posts</h2></NavLink>
-          {
-            posts?.length && posts.map((post) => (
-              <NavLink key={post.id} to={`/posts/${post.id}`}>
-                  <h3>{post.post_title}</h3>
-                  <p>{post.description}</p>
+                    </NavLink>
+                  </div>
+                ))
+              }
+            </div>
+        </div>
+        <div>
+          <NavLink to='/posts' className="all_posts" ><img src={stripes} alt="stripes"/><h2>Posts</h2></NavLink>
+            <div className="homepage_posts" >
+              {
+                posts?.length && posts.map((post) => (
+                  <div className="each_post">
+                    <NavLink key={post.id} to={`/posts/${post.id}`}>
+                        <img src={post.image ? post.image : defaultImage}  alt="post-image" />
+                        <h3 className="post_title" >{post.post_title}</h3>
+                        <p>{post.description}</p>
 
-              </NavLink>
-            ))
-          }
+                    </NavLink>
+                  </div>
+                ))
+              }
+            </div>
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 

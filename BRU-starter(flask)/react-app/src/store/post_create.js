@@ -6,8 +6,9 @@ const createPost = (post) => ({
     payload: post
 })
 
-const deletePost = () => ({
-    type: DELETE_POST
+const deletePost = (id) => ({
+    type: DELETE_POST,
+    payload: id
 })
 
 
@@ -19,7 +20,7 @@ export const delExistingPost = (postId) => async (dispatch) => {
         },
         body: JSON.stringify(postId)
     })
-    dispatch(deletePost())
+    dispatch(deletePost(postId))
 }
 
 
@@ -68,8 +69,9 @@ export default function createReducer(state = { create: {} }, action) {
         case CREATE_POST:
             return action.payload;
         case DELETE_POST:
-            state = {}
-            return state
+            const newState = {...state}
+            delete newState[action.payload]
+            return newState
         default:
             return state;
 

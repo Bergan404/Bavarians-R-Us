@@ -21,7 +21,6 @@ class User(db.Model, UserMixin):
     creator_reply = db.relationship('Reply', back_populates="user_reply")
     creator_cart = db.relationship('ShoppingCart', back_populates='user_cart')
 
-
     @property
     def password(self):
         return self.hashed_password
@@ -64,9 +63,10 @@ class Post(db.Model):
     # Relations
     creator = db.relationship('User', back_populates="post_creator")
     category = db.relationship('Category', back_populates="post_category")
-    user_post = db.relationship('Review', back_populates="creator_post")
-    shopping_cart = db.relationship('ShoppingCartPost', back_populates='shopping_post')
-
+    user_post = db.relationship(
+        'Review', cascade="all,delete", back_populates="creator_post")
+    shopping_cart = db.relationship(
+        'ShoppingCartPost', cascade="all,delete", back_populates='shopping_post')
 
     def to_dict(self):
         return {
@@ -101,7 +101,7 @@ class Discussion(db.Model):
     # Relations
     discussion = db.relationship('User', back_populates="discussion_creator")
     discussion_post = db.relationship(
-        'Reply', back_populates='user_discussion')
+        'Reply', cascade="all,delete", back_populates='user_discussion')
 
     def to_dict(self):
         return {
@@ -197,7 +197,7 @@ class ShoppingCart(db.Model):
     userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     created_at = db.Column(db.Date)
 
-    #Relations
+    # Relations
     user_cart = db.relationship('User', back_populates="creator_cart")
     cart = db.relationship('ShoppingCartPost', back_populates='shopping')
 
@@ -215,7 +215,8 @@ class ShoppingCartPost(db.Model):
     __tablename__ = 'shoppingcartposts'
 
     id = db.Column(db.Integer, primary_key=True)
-    shoppingCartId = db.Column(db.Integer, db.ForeignKey('shoppingcarts.id'), nullable=False)
+    shoppingCartId = db.Column(db.Integer, db.ForeignKey(
+        'shoppingcarts.id'), nullable=False)
     postId = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
 
     # Relations

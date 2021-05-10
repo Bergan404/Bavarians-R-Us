@@ -6,6 +6,9 @@
 html {
     scroll-behavior: smooth;
 }
+body {
+    font-family: sans-serif;
+}
 
 :root {
 	--black: #0b0c10;

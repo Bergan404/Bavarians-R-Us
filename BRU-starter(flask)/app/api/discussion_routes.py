@@ -57,3 +57,5 @@ def delete_discussion():
     discussion = Discussion.query.get(discussionId)
     db.session.delete(discussion)
     db.session.commit()
+    discussions = Discussion.query.all()
+    return {"discussions": [discussion.to_dict() for discussion in discussions]}

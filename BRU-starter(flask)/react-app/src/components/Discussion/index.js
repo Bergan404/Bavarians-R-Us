@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { findAllCategories } from '../../store/category'
 import { NavLink, useHistory, useParams } from 'react-router-dom';
 import { findOneDiscussion } from '../../store/oneDiscussion'
-import { delExistingDiscussion } from '../../store/discussion_create'
+import { delExistingDiscussion } from '../../store/discussions'
 import ReplyPage from './replies'
+import ReplyForm from '../auth/ReplyForm'
 
 
 const PostPage = (props) => {
@@ -33,6 +34,9 @@ const PostPage = (props) => {
             <img src={oneDiscussion.image}></img>
             <p>{oneDiscussion.body}</p>
             <hr></hr>
+            <div>
+                <ReplyForm />
+            </div>
             <div>
                 <ReplyPage />
             </div>

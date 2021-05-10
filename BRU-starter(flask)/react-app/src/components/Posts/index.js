@@ -5,7 +5,7 @@ import { NavLink, useHistory, useParams } from 'react-router-dom';
 import { findOnePost } from '../../store/onePost'
 import { addThePost } from '../../store/add_post'
 import { findAllReviews } from '../../store/reviews'
-import { delExistingPost } from '../../store/post_create'
+import { delExistingPost } from '../../store/posts'
 import ReviewPage from './reviews'
 import ReviewForm from '../auth/ReviewForm'
 
