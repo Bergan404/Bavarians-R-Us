@@ -9,17 +9,15 @@ const DiscussionForm = () => {
     const [errors, setErrors] = useState([]);
     const [discussionTitle, setDiscussionTitle] = useState('')
     const [body, setBody] = useState('');
-    // const [image, setImage] = useState(null);
-    const [image, setImage] = useState('');
-
-    console.log(discussionTitle)
-    console.log(body)
-    console.log(image)
-
+    const [image, setImage] = useState(null);
+    // const [image, setImage] = useState('');
 
 
     const onDiscussionCreation = async (e) => {
         e.preventDefault();
+        const formData = new FormData();
+        formData.append("image", image);
+
         const data = await dispatch(discussionCreate(discussionTitle, body, image));
         if (data) {
             history.push(`/discussion/${data.id}`);
@@ -31,9 +29,8 @@ const DiscussionForm = () => {
     }
 
     const updateImage = (e) => {
-        // const file = e.target.files[0];
-        // setImage(file)
-        setImage(e.target.value);
+        const file = e.target.files[0];
+        setImage(file)
     }
 
     const updateBody = (e) => {
@@ -63,10 +60,8 @@ const DiscussionForm = () => {
                 <label htmlFor="image">Image</label>
                 <input
                     name="image"
-                    type="text"
-                    value={image}
-                    // type="file"
-                    // accept="image/*"
+                    type="file"
+                    accept="image/*"
                     onChange={updateImage}
                     className='server_input_image'
                 />

@@ -25,18 +25,32 @@ export const delExistingDiscussion = (discussionId) => async (dispatch) => {
 
 
 export const discussionCreate = (discussion_title, body, image, userId, created_at) => async (dispatch) => {
+    const formData = new FormData();
+    formData.append('discussion_title', discussion_title);
+    formData.append('body', body);
+    if (image) {
+        formData.append('image', image);
+    }
+    formData.append('userId', userId);
+    formData.append('created_at', created_at);
+
     const response = await fetch("/api/discussion/create", {
+        // method: "POST",
+        // headers: {
+        //     "Content-Type": "application/json",
+        // },
+        // body: JSON.stringify({
+        //     discussion_title,
+        //     body,
+        //     image,
+        //     userId,
+        //     created_at
+        // }),
         method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            discussion_title,
-            body,
-            image,
-            userId,
-            created_at
-        }),
+        // headers: {
+        //     "Content-Type": "multipart/form-data",
+        // },
+        body: formData
     });
     const data = await response.json();
     dispatch(createDiscussion(data));

@@ -25,22 +25,37 @@ export const delExistingPost = (postId) => async (dispatch) => {
 
 
 export const postCreate = (post_title, image, description, year, model, price, in_stock, new_used, categoryId) => async (dispatch) => {
+    const formData = new FormData();
+    formData.append('post_title', post_title);
+    if (image) {
+        formData.append('image', image);
+    }
+    formData.append('description', description);
+    formData.append('year', year);
+    formData.append('model', model);
+    formData.append('price', price);
+    formData.append('in_stock', in_stock);
+    formData.append('new_used', new_used);
+    formData.append('categoryId', categoryId);
+
+
     const response = await fetch("/api/posts/create", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            post_title,
-            image,
-            description,
-            year,
-            model,
-            price,
-            in_stock,
-            new_used,
-            categoryId
-        }),
+        // headers: {
+        //     "Content-Type": "application/json",
+        // },
+        // body: JSON.stringify({
+        //     post_title,
+        //     image,
+        //     description,
+        //     year,
+        //     model,
+        //     price,
+        //     in_stock,
+        //     new_used,
+        //     categoryId
+        // }),
+        body: formData
     });
     const data = await response.json();
     dispatch(createPost(data));

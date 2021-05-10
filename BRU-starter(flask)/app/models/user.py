@@ -110,7 +110,8 @@ class Discussion(db.Model):
             "body": self.body,
             "image": self.image,
             "userId": self.userId,
-            "created_at": self.created_at
+            "created_at": self.created_at,
+            'replies': [reply.to_dict() for reply in self.discussion_post]
         }
 
 # ------------------------------Reviews Table ----------------------------------

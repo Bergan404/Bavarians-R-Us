@@ -7,6 +7,7 @@ import { addThePost } from '../../store/add_post'
 import { findAllReviews } from '../../store/reviews'
 import { delExistingPost } from '../../store/post_create'
 import ReviewPage from './reviews'
+import ReviewForm from '../auth/ReviewForm'
 
 
 
@@ -49,6 +50,8 @@ const PostPage = (props) => {
             <p>{onePost.new_used}</p>
             <p>{onePost.categoryId}</p>
             <button className="add-to-cart-button" onClick={handleCartAdd} >Add To Cart</button>
+
+            <ReviewForm />
 
             <ReviewPage />
         </>

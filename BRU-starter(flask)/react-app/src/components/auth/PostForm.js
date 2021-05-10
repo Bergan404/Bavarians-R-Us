@@ -10,8 +10,8 @@ const PostForm = () => {
 
     const [errors, setErrors] = useState([]);
     const [postTitle, setPostTitle] = useState('');
-    // const [image, setImage] = useState(null);
-    const [image, setImage] = useState('');
+    const [image, setImage] = useState(null);
+    // const [image, setImage] = useState('');
     const [description, setDescription] = useState('');
     const [year, setYear] = useState('');
     const [model, setModel] = useState('');
@@ -23,6 +23,9 @@ const PostForm = () => {
 
     const onPostCreation = async (e) => {
         e.preventDefault();
+        const formData = new FormData();
+        formData.append("image", image);
+
         const data = await dispatch(postCreate(postTitle, image, description, year, model, price, inStock, newUsed, categoryId));
         if (data) {
             history.push(`/posts/${data.id}`);
@@ -34,9 +37,8 @@ const PostForm = () => {
     }
 
     const updateImage = (e) => {
-        // const file = e.target.files[0];
-        // setImage(file)
-        setImage(e.target.value);
+        const file = e.target.files[0];
+        setImage(file)
     }
 
     const updateDescription = (e) => {
@@ -89,10 +91,8 @@ const PostForm = () => {
                 <label htmlFor="image">Image</label>
                 <input
                     name="image"
-                    type="text"
-                    value={image}
-                    // type="file"
-                    // accept="image/*"
+                    type="file"
+                    accept="image/*"
                     onChange={updateImage}
                     className='server_input_image'
                 />

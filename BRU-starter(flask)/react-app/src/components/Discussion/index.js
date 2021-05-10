@@ -4,7 +4,7 @@ import { findAllCategories } from '../../store/category'
 import { NavLink, useHistory, useParams } from 'react-router-dom';
 import { findOneDiscussion } from '../../store/oneDiscussion'
 import { delExistingDiscussion } from '../../store/discussion_create'
-
+import ReplyPage from './replies'
 
 
 const PostPage = (props) => {
@@ -32,6 +32,10 @@ const PostPage = (props) => {
             <h1>{oneDiscussion.discussion_title}</h1>
             <img src={oneDiscussion.image}></img>
             <p>{oneDiscussion.body}</p>
+            <hr></hr>
+            <div>
+                <ReplyPage />
+            </div>
         </>
     )
 }
