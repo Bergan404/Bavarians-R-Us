@@ -21,7 +21,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 250px;
-    background-color: var(--lightgray);
+    background-color: var(--darkgray);
     padding: 20px;
     text-align: center;
     animation: fadeInAnimation ease 2s;
@@ -38,7 +38,9 @@
 }
 .discussion_label {
     font-size: 25px;
-    color: var(--blue);
+    color: var(--lightblue);
+    margin-bottom: 10px;
+    display: block;
 }
 .discussion_input {
     width: 100%;
@@ -51,6 +53,7 @@
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
+    color: white;
 }
 .discussion_text {
     width: 100%;
@@ -93,7 +96,7 @@
     margin-right: auto;
     /* margin-top: 50px; */
     /* margin-bottom: 50px; */
-    background-color: var(--lightgray);
+    background-color: var(--darkgray);
     padding: 20px;
     text-align: center;
     animation: fadeInAnimation ease 2s;
@@ -110,23 +113,27 @@
 }
 .post_label {
     font-size: 25px;
-    color: var(--blue);
+    color: var(--lightblue);
+    display: block;
+    margin-bottom: 6px;
 }
 .post_label_new_used {
     font-size: 25px;
-    color: var(--blue);
+    color: var(--lightblue);
     display: block;
     margin-bottom: 5px;
 }
 .post_label_category {
     font-size: 25px;
-    color: var(--blue);
+    color: var(--lightblue);
     display: block;
     margin-bottom: 5px;
+    display: block;
+    margin-bottom: 6px;
 }
 .post_label_image {
     font-size: 25px;
-    color: var(--blue);
+    color: var(--lightblue);
     /* display: block; */
     margin-right: 10px;
 }
@@ -150,6 +157,12 @@
     display: block;
     margin-right: auto;
     margin-left: auto;
+}
+.post_input_image {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: white;
 }
 .post_input_stock {
     border: 1px solid;
@@ -176,6 +189,7 @@
 .post-button {
     border: none;
     padding: 5px;
+    margin-top: 10px;
     background: none;
     background-color: var(--lightblue);
     font-size: 17px;
