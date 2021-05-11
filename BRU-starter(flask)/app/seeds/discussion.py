@@ -2,6 +2,9 @@
 from app.models import db
 from app.models.user import Discussion, Reply
 from datetime import datetime
+from faker import Faker
+import random
+fake = Faker()
 
 
 # Adds a demo user, you can add other users here if you want
