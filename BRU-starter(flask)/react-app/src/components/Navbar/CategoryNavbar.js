@@ -8,8 +8,6 @@ const CategoryNavbar = () => {
   const user = useSelector(state => state.session.user)
   const categories = useSelector(state => state.categories.categories)
 
-  console.log(categories)
-
   return (
     <nav className="nav_container2">
         <div className='category-display'>

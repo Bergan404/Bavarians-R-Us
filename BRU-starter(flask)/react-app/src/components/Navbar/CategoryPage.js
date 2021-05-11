@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom';
 import { findOneCategory } from '../../store/oneCategory';
+import defaultImage from '../default_image.png'
+
 
 import './navbar.css'
 
@@ -15,22 +17,25 @@ const CategoryPage = () => {
 
     useEffect(async () => {
         await dispatch(findOneCategory(categoryId))
-    }, [dispatch])
+    }, [dispatch, categoryId])
 
 
     return (
         <>
             <div>
-                <h1>{categoryInfo.category}</h1>
+                <h1 className="category_header" >{categoryInfo.category}</h1>
             </div>
-            <div>
+            <div className="homepage_posts_page">
                 {
                     categoryPosts?.length && categoryPosts.map((post) => (
-                    <NavLink key={post.id} to={`/posts/${post.id}`}>
-                        <h3>{post.post_title}</h3>
-                        <p>{post.description}</p>
+                    <div className="each_post">
+                        <NavLink key={post.id} to={`/posts/${post.id}`}>
+                            <img src={post.image ? post.image : defaultImage} alt="post-image" />
+                            <h3 className="post_title">{post.post_title}</h3>
+                            <p>{post.description}</p>
 
-                    </NavLink>
+                        </NavLink>
+                    </div>
                     ))
                 }
             </div>

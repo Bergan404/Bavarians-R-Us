@@ -32,7 +32,7 @@ const AllDiscussions = () => {
               discussions?.length && discussions.map((discussion) => (
                 <div className="each_discussion">
                   <NavLink key={discussion.id} to={`/discussion/${discussion.id}`}>
-                      <h3>{discussion.discussion_title}</h3>
+                      <h3 className="discussion_title">{discussion.discussion_title}</h3>
                       <img src={discussion.image ? discussion.image : defaultImage}  alt="discussion-image"/>
                       <p>{discussion.body}</p>
 

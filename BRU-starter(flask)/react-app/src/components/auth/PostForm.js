@@ -15,7 +15,7 @@ const PostForm = () => {
     const [description, setDescription] = useState('');
     const [year, setYear] = useState('');
     const [model, setModel] = useState('');
-    const [price, setPrice] = useState('');
+    const [price, setPrice] = useState('$');
     const [inStock, setInStock] = useState('');
     const [categoryId, setCategoryId] = useState("");
     const [newUsed, setNewUsed] = useState(false);
@@ -70,109 +70,103 @@ const PostForm = () => {
     }
 
     return (
-        <form onSubmit={onPostCreation}>
+        <form onSubmit={onPostCreation} className="post_form">
             <div>
                 {errors.map((error) => (
                     <div>{error}</div>
                 ))}
             </div>
-            <div className='server_div'>
-                <label htmlFor="postTitle">Post Title</label>
+            <div className='post_div'>
+                <label htmlFor="postTitle" className="post_label">Post Title</label>
                 <input
                     name="postTitle"
                     type="text"
-                    placeholder="Post title"
                     value={postTitle}
                     onChange={updateTitle}
-                    className='server_input'
+                    className='post_input'
                 />
             </div>
-            <div className='server_div'>
-                <label htmlFor="image">Image</label>
+            <div className='post_div'>
+                <label htmlFor="image" className="post_label_image">Image :</label>
                 <input
                     name="image"
                     type="file"
                     accept="image/*"
                     onChange={updateImage}
-                    className='server_input_image'
+                    className='post_input_image'
                 />
             </div>
-            <div className='server_div'>
-                <label htmlFor="description">Description</label>
-                <input
-                    name="description"
-                    type="text"
-                    value={description}
-                    onChange={updateDescription}
-                    className='server_input'
-                />
+            <div className='post_div'>
+                <label htmlFor="description" className="post_label">Description</label>
+                <textarea name="description" value={description} onChange={updateDescription} className='discussion_text'/>
             </div>
-            <div className='server_div'>
-                <label htmlFor="year">Year</label>
+            <div className='post_div'>
+                <label htmlFor="year" className="post_label">Year</label>
                 <input
                     name="year"
                     type="text"
                     value={year}
                     onChange={updateYear}
-                    className='server_input'
+                    className='post_input'
                 />
             </div>
-            <div className='server_div'>
-                <label htmlFor="model">Model</label>
+            <div className='post_div'>
+                <label htmlFor="model" className="post_label">Model</label>
                 <input
                     name="model"
                     type="text"
                     value={model}
                     onChange={updateModel}
-                    className='server_input'
+                    className='post_input'
                 />
             </div>
-            <div className='server_div'>
-                <label htmlFor="price">Price</label>
+            <div className='post_div'>
+                <label htmlFor="price" className="post_label">Price</label>
                 <input
                     name="price"
                     type="text"
                     value={price}
                     onChange={updatePrice}
-                    className='server_input'
+                    className='post_input_price'
                 />
             </div>
-            <div className='server_div'>
-                <label htmlFor="inStock">In Stock</label>
+            <div className='post_div'>
+                <label htmlFor="inStock" className="post_label">In Stock</label>
                 <input
                     name="inStock"
                     type="text"
                     value={inStock}
                     onChange={updateInStock}
-                    className='server_input'
+                    className='post_input_stock'
                 />
             </div>
-            <div className='server_div'>
-                <label htmlFor="newUsed">New or Used</label>
+            <div className='post_div'>
+                <label htmlFor="newUsed" className="post_label_new_used">New or Used</label>
                 <input
                     name="newUsed"
                     type="checkbox"
                     value={newUsed}
                     onChange={updateNewUsed}
-                    className='server_input_checkbox'
+                    className='post_input_checkbox'
                 />
             </div>
-            <div>
-                <label>Category</label>
+            <div className='post_div'>
+                <label className="post_label_category">Category</label>
                 <select
                     name='category'
                     value={categoryId}
                     onChange={updateCategory}
+                    className="post_input_select"
                 >
                     {
                         categories?.length && categories.map((category) => (
-                            <option value={category.id} >{category.category}</option>
+                            <option value={category.id} className="post_option">{category.category}</option>
                         ))
                     }
                 </select>
             </div>
             <div className="create">
-                <button className="server-button" type="submit">Create Post</button>
+                <button className="post-button" type="submit">Create Post</button>
             </div>
         </form>
     )

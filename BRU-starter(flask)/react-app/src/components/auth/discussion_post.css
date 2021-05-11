@@ -1,0 +1,160 @@
+.discussion_form {
+    width: 500px;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    background-color: var(--lightgray);
+    padding: 20px;
+    text-align: center;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    box-shadow: #00000060 5px 5px;
+}
+.discussion_div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.discussion_label {
+    font-size: 25px;
+    color: var(--blue);
+}
+.discussion_input {
+    width: 100%;
+    padding: 5px;
+    font-size: 17px;
+    border: none;
+    border-radius: 24px;
+}
+.discussion_input_image {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.discussion_text {
+    width: 100%;
+    height: 100px;
+    border: none;
+    border-radius: 24px;
+}
+.discussion-button {
+    border: none;
+    padding: 5px;
+    background: none;
+    background-color: var(--lightblue);
+    font-size: 17px;
+    border-radius: 24px;
+    transition: background-color .3s ease-in-out;
+}
+.discussion-button:hover {
+    background-color: var(--blue);
+    color: white;
+    cursor: pointer;
+}
+
+
+.post_form {
+    width: 500px;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: var(--lightgray);
+    padding: 20px;
+    text-align: center;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    box-shadow: #00000060 5px 5px;
+}
+.post_div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.post_label {
+    font-size: 25px;
+    color: var(--blue);
+}
+.post_label_new_used {
+    font-size: 25px;
+    color: var(--blue);
+    display: block;
+    margin-bottom: 5px;
+}
+.post_label_category {
+    font-size: 25px;
+    color: var(--blue);
+    display: block;
+    margin-bottom: 5px;
+}
+.post_label_image {
+    font-size: 25px;
+    color: var(--blue);
+    /* display: block; */
+    margin-right: 10px;
+}
+.post_input {
+    width: 100%;
+    padding: 5px;
+    font-size: 17px;
+    border: none;
+    border-radius: 24px;
+}
+.post_input_price {
+    border: 1px solid;
+    padding: 3px;
+    border-radius: 10px 10px;
+    box-sizing: border-box;
+    border-style: none;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    font-size: 20px;
+    width: 20%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+.post_input_stock {
+    border: 1px solid;
+    padding: 3px;
+    border-radius: 10px 10px;
+    box-sizing: border-box;
+    border-style: none;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    font-size: 20px;
+    width: 20%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+.post_input_select {
+    padding: 5px;
+    border: none;
+    border-radius: 24px;
+}
+.post_option {
+    font-size: 17px;
+}
+.post-button {
+    border: none;
+    padding: 5px;
+    background: none;
+    background-color: var(--lightblue);
+    font-size: 17px;
+    border-radius: 24px;
+    transition: background-color .3s ease-in-out;
+}
+.post-button:hover {
+    background-color: var(--blue);
+    color: white;
+    cursor: pointer;
+}

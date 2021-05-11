@@ -6,7 +6,7 @@ import { findOnePost } from '../../store/onePost'
 import { delExistingPost } from '../../store/post_create'
 import { addThePost } from '../../store/add_post';
 
-
+import './shoppingcart.css'
 
 const ShoppingCart = () => {
     const dispatch = useDispatch()
@@ -15,7 +15,7 @@ const ShoppingCart = () => {
     let total = 0;
     if (addThePost) {
         const itemTotal = addThePost.forEach(item => {
-            let itemPrice = item.price.slice(0);
+            let itemPrice = item.price.slice(1);
             total = total + +itemPrice
             return total
         })

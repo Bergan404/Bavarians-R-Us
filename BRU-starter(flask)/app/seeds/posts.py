@@ -20,7 +20,7 @@ def seed_posts():
             db.session.add(seed_message)
     auto_seed(50, 50, 4)
 
-    first_post = Post(post_title="Thermostat", image='https://pg-cdn-a2.datacaciques.com/00/MTEwMjUx/19/06/04v3ug285n995p40bu6a7e700c016206f2.jpg',
+    first_post = Post(post_title="Thermostat", image='https://3a663eb0fef48c6d2d60-a88f8ebfcdb877ad223e888bfcb7f7ec.ssl.cf1.rackcdn.com/97312_x800.webp',
                       description='This is a used part for a bmw e90 series.', year='06-10',
                       model="E90", price='156', in_stock="yes", new_used=True,
                       userId=1, categoryId='5', created_at=datetime.now())

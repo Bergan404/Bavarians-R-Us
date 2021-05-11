@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 import { discussionCreate } from '../../store/discussion_create'
 
+import './discussion_post.css';
+
 const DiscussionForm = () => {
     const history = useHistory()
     const dispatch = useDispatch();
@@ -39,45 +41,38 @@ const DiscussionForm = () => {
 
 
     return (
-        <form onSubmit={onDiscussionCreation}>
+        <form onSubmit={onDiscussionCreation} className="discussion_form">
             <div>
                 {errors.map((error) => (
                     <div>{error}</div>
                 ))}
             </div>
-            <div className='server_div'>
-                <label htmlFor="discussionTitle">Discussion Title</label>
+            <div className='discussion_div'>
+                <label htmlFor="discussionTitle" className="discussion_label">Discussion Title</label>
                 <input
                     name="discussionTitle"
                     type="text"
-                    placeholder="Discussion title"
                     value={discussionTitle}
                     onChange={updateTitle}
-                    className='server_input'
+                    className='discussion_input'
                 />
             </div>
-            <div className='server_div'>
-                <label htmlFor="image">Image</label>
+            <div className='discussion_div'>
+                <label htmlFor="image" className="discussion_label">Image :</label>
                 <input
                     name="image"
                     type="file"
                     accept="image/*"
                     onChange={updateImage}
-                    className='server_input_image'
+                    className='discussion_input_image'
                 />
             </div>
-            <div className='server_div'>
-                <label htmlFor="body">Body</label>
-                <input
-                    name="body"
-                    type="text"
-                    value={body}
-                    onChange={updateBody}
-                    className='server_input'
-                />
+            <div className='discussion_div'>
+                <label htmlFor="body" className="discussion_label">Body</label>
+                <textarea name="body" value={body} onChange={updateBody} className='discussion_text'/>
             </div>
             <div className="create">
-                <button className="server-button" type="submit">Create Discussion</button>
+                <button className="discussion-button" type="submit">Create Discussion</button>
             </div>
         </form>
     )

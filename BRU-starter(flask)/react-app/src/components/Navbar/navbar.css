@@ -113,3 +113,8 @@
     background-color: var(--red);
     cursor: pointer;
 }
+
+.category_header {
+    text-align: center;
+    margin-top: 20px;
+}

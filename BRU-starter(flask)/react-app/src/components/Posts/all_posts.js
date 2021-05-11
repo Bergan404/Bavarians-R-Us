@@ -31,7 +31,7 @@ const AllPosts = () => {
               <div className="each_post">
                 <NavLink key={post.id} to={`/posts/${post.id}`}>
                   <img src={post.image ? post.image : defaultImage} alt="post-image" />
-                  <h3>{post.post_title}</h3>
+                  <h3 className="post_title">{post.post_title}</h3>
                   <p>{post.description}</p>
                 </NavLink>
               </div>
