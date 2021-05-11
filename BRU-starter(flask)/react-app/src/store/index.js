@@ -11,6 +11,7 @@ import oneDiscussion from './oneDiscussion'
 import addThePost from './add_post'
 import reviews from './reviews'
 import oneCategory from './oneCategory'
+import allUsers from './all_users'
 
 
 const rootReducer = combineReducers({
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
     oneDiscussion,
     oneCategory,
     addThePost,
-    reviews
+    reviews,
+    allUsers
 });
 
 let enhancer;

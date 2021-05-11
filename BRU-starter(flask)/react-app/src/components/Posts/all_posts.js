@@ -24,11 +24,11 @@ const AllPosts = () => {
   return (
     <>
       <div>
-        <img src={stripes} alt="stripes" className="stripes1" /><h1 className="all_posts_page">All Posts</h1>
+        <div className="posts_center"><img src={stripes} alt="stripes" className="stripes1" /><h1 className="all_posts_page">All Posts</h1></div>
         <div className="homepage_posts_page">
           {
             posts?.length && posts.map((post) => (
-              <div className="each_post">
+              <div className="each_post_page">
                 <NavLink key={post.id} to={`/posts/${post.id}`}>
                   <img src={post.image ? post.image : defaultImage} alt="post-image" />
                   <h3 className="post_title">{post.post_title}</h3>

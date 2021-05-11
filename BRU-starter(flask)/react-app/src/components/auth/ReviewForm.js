@@ -4,6 +4,7 @@ import { Redirect, useHistory, useParams } from "react-router-dom";
 import { reviewCreate } from '../../store/review_create'
 import { findOnePost } from '../../store/onePost'
 
+import './review_reply.css';
 
 const ReviewForm = () => {
     const history = useHistory()
@@ -32,11 +33,11 @@ const ReviewForm = () => {
     return (
         <form onSubmit={onReviewCreation}>
             <div className='server_div'>
-                <label>Leave a Review</label>
-                <textarea value={body} onChange={updateBody} />
+                <label className="review_label">Leave a Review</label>
+                <textarea value={body} onChange={updateBody} className="review_text" />
             </div>
             <div className="create">
-                <button className="server-button" type="submit">Create Review</button>
+                <button className="review-button" type="submit">Create Review</button>
             </div>
         </form>
     )

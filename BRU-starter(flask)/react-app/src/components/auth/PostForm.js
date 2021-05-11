@@ -70,105 +70,115 @@ const PostForm = () => {
     }
 
     return (
-        <form onSubmit={onPostCreation} className="post_form">
-            <div>
-                {errors.map((error) => (
-                    <div>{error}</div>
-                ))}
-            </div>
-            <div className='post_div'>
-                <label htmlFor="postTitle" className="post_label">Post Title</label>
-                <input
-                    name="postTitle"
-                    type="text"
-                    value={postTitle}
-                    onChange={updateTitle}
-                    className='post_input'
-                />
-            </div>
-            <div className='post_div'>
-                <label htmlFor="image" className="post_label_image">Image :</label>
-                <input
-                    name="image"
-                    type="file"
-                    accept="image/*"
-                    onChange={updateImage}
-                    className='post_input_image'
-                />
-            </div>
-            <div className='post_div'>
-                <label htmlFor="description" className="post_label">Description</label>
-                <textarea name="description" value={description} onChange={updateDescription} className='discussion_text'/>
-            </div>
-            <div className='post_div'>
-                <label htmlFor="year" className="post_label">Year</label>
-                <input
-                    name="year"
-                    type="text"
-                    value={year}
-                    onChange={updateYear}
-                    className='post_input'
-                />
-            </div>
-            <div className='post_div'>
-                <label htmlFor="model" className="post_label">Model</label>
-                <input
-                    name="model"
-                    type="text"
-                    value={model}
-                    onChange={updateModel}
-                    className='post_input'
-                />
-            </div>
-            <div className='post_div'>
-                <label htmlFor="price" className="post_label">Price</label>
-                <input
-                    name="price"
-                    type="text"
-                    value={price}
-                    onChange={updatePrice}
-                    className='post_input_price'
-                />
-            </div>
-            <div className='post_div'>
-                <label htmlFor="inStock" className="post_label">In Stock</label>
-                <input
-                    name="inStock"
-                    type="text"
-                    value={inStock}
-                    onChange={updateInStock}
-                    className='post_input_stock'
-                />
-            </div>
-            <div className='post_div'>
-                <label htmlFor="newUsed" className="post_label_new_used">New or Used</label>
-                <input
-                    name="newUsed"
-                    type="checkbox"
-                    value={newUsed}
-                    onChange={updateNewUsed}
-                    className='post_input_checkbox'
-                />
-            </div>
-            <div className='post_div'>
-                <label className="post_label_category">Category</label>
-                <select
-                    name='category'
-                    value={categoryId}
-                    onChange={updateCategory}
-                    className="post_input_select"
-                >
-                    {
-                        categories?.length && categories.map((category) => (
-                            <option value={category.id} className="post_option">{category.category}</option>
-                        ))
-                    }
-                </select>
-            </div>
-            <div className="create">
-                <button className="post-button" type="submit">Create Post</button>
-            </div>
-        </form>
+        <div className="post_background" >
+            <br></br>
+            <br></br>
+            <form onSubmit={onPostCreation} className="post_form">
+                <div>
+                    {errors.map((error) => (
+                        <div>{error}</div>
+                    ))}
+                </div>
+                <div className='post_div'>
+                    <label htmlFor="postTitle" className="post_label">Post Title</label>
+                    <input
+                        name="postTitle"
+                        type="text"
+                        value={postTitle}
+                        onChange={updateTitle}
+                        className='post_input'
+                    />
+                </div>
+                <div className='post_div'>
+                    <label htmlFor="image" className="post_label_image">Image :</label>
+                    <input
+                        name="image"
+                        type="file"
+                        accept="image/*"
+                        onChange={updateImage}
+                        className='post_input_image'
+                    />
+                </div>
+                <div className='post_div'>
+                    <label htmlFor="description" className="post_label">Description</label>
+                    <textarea name="description" value={description} onChange={updateDescription} className='discussion_text'/>
+                </div>
+                <div className='post_div'>
+                    <label htmlFor="year" className="post_label">Year</label>
+                    <input
+                        name="year"
+                        type="text"
+                        value={year}
+                        onChange={updateYear}
+                        className='post_input'
+                    />
+                </div>
+                <div className='post_div'>
+                    <label htmlFor="model" className="post_label">Model</label>
+                    <input
+                        name="model"
+                        type="text"
+                        value={model}
+                        onChange={updateModel}
+                        className='post_input'
+                    />
+                </div>
+                <div className='post_div'>
+                    <label htmlFor="price" className="post_label">Price</label>
+                    <input
+                        name="price"
+                        type="text"
+                        value={price}
+                        onChange={updatePrice}
+                        className='post_input_price'
+                    />
+                </div>
+                <div className='post_div'>
+                    <label htmlFor="inStock" className="post_label">In Stock</label>
+                    <input
+                        name="inStock"
+                        type="text"
+                        value={inStock}
+                        onChange={updateInStock}
+                        className='post_input_stock'
+                    />
+                </div>
+                <div className='post_div'>
+                    <label htmlFor="newUsed" className="post_label_new_used">New or Used</label>
+                    <input
+                        name="newUsed"
+                        type="checkbox"
+                        value={newUsed}
+                        onChange={updateNewUsed}
+                        className='post_input_checkbox'
+                    />
+                </div>
+                <div className='post_div'>
+                    <label className="post_label_category">Category</label>
+                    <select
+                        name='category'
+                        value={categoryId}
+                        onChange={updateCategory}
+                        className="post_input_select"
+                    >
+                        {
+                            categories?.length && categories.map((category) => (
+                                <option value={category.id} className="post_option">{category.category}</option>
+                            ))
+                        }
+                    </select>
+                </div>
+                <div className="create">
+                    <button className="post-button" type="submit">Create Post</button>
+                </div>
+            </form>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+        </div>
     )
 }
 

@@ -6,6 +6,7 @@ import { findOneDiscussion } from '../../store/oneDiscussion'
 import { delExistingDiscussion } from '../../store/discussions'
 import ReplyPage from './replies'
 import ReplyForm from '../auth/ReplyForm'
+import defaultImage from '../default_image.png'
 
 
 const PostPage = (props) => {
@@ -28,19 +29,21 @@ const PostPage = (props) => {
 	};
 
     return (
-        <>
+        <div className="discussion_page">
             {oneDiscussion.userId === userId?<button className="delete-button" onClick={handleDelete} >Delete</button>: null}
             <h1>{oneDiscussion.discussion_title}</h1>
-            <img src={oneDiscussion.image}></img>
-            <p>{oneDiscussion.body}</p>
-            <hr></hr>
-            <div>
+            <img src={oneDiscussion.image ? oneDiscussion.image : defaultImage} alt="discussion_image" className="discussion_image"></img>
+            <p className="discussion_body">{oneDiscussion.body}</p>
+            {/* <hr></hr> */}
+
+            <div className="discussion_reply_create">
                 <ReplyForm />
             </div>
+
             <div>
                 <ReplyPage />
             </div>
-        </>
+        </div>
     )
 }
 

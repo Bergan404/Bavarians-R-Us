@@ -1,0 +1,55 @@
+.review_text {
+    width: 100%;
+    height: 60px;
+    font-size: 17px;
+    font-family: sans-serif;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.review_label {
+    color: var(--lightblue);
+}
+.review-button {
+    font-size: 17px;
+    padding: 5px;
+    border: none;
+    background: none;
+    background-color: var(--blue);
+    border-radius: 24px;
+    color: white;
+    transition: background-color .3s ease-in-out;
+}
+.review-button:hover {
+    cursor: pointer;
+    background-color: var(--lightblue);
+    color: black;
+}
+
+.reply_text {
+    width: 100%;
+    height: 60px;
+    font-size: 17px;
+    font-family: sans-serif;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.reply_label {
+    color: var(--lightblue);
+}
+.reply-button {
+    font-size: 17px;
+    padding: 5px;
+    border: none;
+    background: none;
+    background-color: var(--blue);
+    border-radius: 24px;
+    color: white;
+    transition: background-color .3s ease-in-out;
+}
+.reply-button:hover {
+    cursor: pointer;
+    background-color: var(--lightblue);
+    color: black;
+}

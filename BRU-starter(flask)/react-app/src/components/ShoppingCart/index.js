@@ -5,6 +5,8 @@ import { NavLink, useHistory, useParams } from 'react-router-dom';
 import { findOnePost } from '../../store/onePost'
 import { delExistingPost } from '../../store/post_create'
 import { addThePost } from '../../store/add_post';
+import defaultImage from '../default_image.png'
+
 
 import './shoppingcart.css'
 
@@ -28,24 +30,23 @@ const ShoppingCart = () => {
         await dispatch(findOnePost(postId))
     }, [dispatch])
 
-    // const handleDelete = async (e) => {
-	// 	e.preventDefault();
-	// 	dispatch(delExistingPost(onePost.id));
-	// 	await history.push("/");
-	// };
-
     return (
         <>
-            <h1>Shopping Cart</h1>
-            {
-                addThePost?.length && addThePost.map((post) => (
-                <NavLink key={post.id} to={`/posts/${post.id}`}>
-                    <h3>{post.post_title}</h3>
-                    <p>{post.description}</p>
+            <h1 className="cart_header" >Shopping Cart</h1>
+            <div className="cart_posts" >
+                {
+                    addThePost?.length && addThePost.map((post) => (
+                    <div className="each_post" >
+                        <NavLink key={post.id} to={`/posts/${post.id}`}>
+                            <img src={post.image ? post.image : defaultImage}  alt="post-image" />
+                            <h3 className="post_title">{post.post_title}</h3>
+                            <p>{post.description}</p>
 
-                </NavLink>
-                ))
-            }
+                        </NavLink>
+                    </div>
+                    ))
+                }
+            </div>
             <h3 className="header">Total: ${total}</h3>
         </>
     )

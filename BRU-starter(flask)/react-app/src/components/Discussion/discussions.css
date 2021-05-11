@@ -1,11 +1,14 @@
 .stripes {
     position: relative;
     width: 90px;
-    left: 34em;
+    right: 8em;
     top: 35px;
 }
-.all_discussions_page {
+.discussion_center {
     text-align: center;
+}
+.all_discussions_page {
+    position: relative;
 }
 .homepage_discussions_page {
     display: flex;
@@ -17,4 +20,42 @@
     margin-right: auto;
     margin-top: 20px;
     text-align: center;
+}
+
+
+.discussion_page {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 500px;
+    font-size: 20px;
+}
+.discussion_page h1 {
+    color: var(--blue);
+}
+.discussion_image {
+    width: 500px;
+    margin-top: 20px;
+    border: 1px solid black;
+}
+.discussion_reply_create {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: var(--darkgray);
+    color: white;
+    padding: 20px;
+}
+.discussion_body {
+    font-size: 21px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.replies {
+    padding: 20px;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: var(--lightgray);
 }

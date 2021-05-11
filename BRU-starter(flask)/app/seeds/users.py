@@ -12,11 +12,11 @@ def seed_users():
 
     demo = User(username='Demo', email='demo@aa.io',
                 password='password')
-    demo_cart = ShoppingCart(userId=1, created_at=datetime.now())
+    demo_cart = ShoppingCart(userId=51, created_at=datetime.now())
 
     bergan = User(username='Bergan', email='bergan@aa.io',
                   hashed_password='password', image="")
-    bergan_cart = ShoppingCart(userId=2, created_at=datetime.now())
+    bergan_cart = ShoppingCart(userId=52, created_at=datetime.now())
 
     def auto_seed(count):
         for i in range(count):

@@ -23,10 +23,9 @@ const AllDiscussions = () => {
   }, [dispatch])
 
   return (
-    // <img src={banner} alt="banner" className="banner_image"></img>
     <>
       <div>
-        <img src={stripes} alt="stripes" className="stripes"/><h1 className="all_discussions_page" >All Discussions</h1>
+        <div className="discussion_center"><img src={stripes} alt="stripes" className="stripes"/><h1 className="all_discussions_page" >All Discussions</h1></div>
           <div className="homepage_discussions_page">
             {
               discussions?.length && discussions.map((discussion) => (

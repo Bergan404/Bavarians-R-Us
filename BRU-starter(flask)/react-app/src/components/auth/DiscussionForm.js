@@ -41,40 +41,43 @@ const DiscussionForm = () => {
 
 
     return (
-        <form onSubmit={onDiscussionCreation} className="discussion_form">
-            <div>
-                {errors.map((error) => (
-                    <div>{error}</div>
-                ))}
-            </div>
-            <div className='discussion_div'>
-                <label htmlFor="discussionTitle" className="discussion_label">Discussion Title</label>
-                <input
-                    name="discussionTitle"
-                    type="text"
-                    value={discussionTitle}
-                    onChange={updateTitle}
-                    className='discussion_input'
-                />
-            </div>
-            <div className='discussion_div'>
-                <label htmlFor="image" className="discussion_label">Image :</label>
-                <input
-                    name="image"
-                    type="file"
-                    accept="image/*"
-                    onChange={updateImage}
-                    className='discussion_input_image'
-                />
-            </div>
-            <div className='discussion_div'>
-                <label htmlFor="body" className="discussion_label">Body</label>
-                <textarea name="body" value={body} onChange={updateBody} className='discussion_text'/>
-            </div>
-            <div className="create">
-                <button className="discussion-button" type="submit">Create Discussion</button>
-            </div>
-        </form>
+        <div className="discussion_background">
+            <form onSubmit={onDiscussionCreation} className="discussion_form">
+                <div>
+                    {errors.map((error) => (
+                        <div>{error}</div>
+                    ))}
+                </div>
+                <div className='discussion_div'>
+                    <label htmlFor="discussionTitle" className="discussion_label">Discussion Title</label>
+                    <input
+                        name="discussionTitle"
+                        type="text"
+                        value={discussionTitle}
+                        onChange={updateTitle}
+                        className='discussion_input'
+                    />
+                </div>
+                <div className='discussion_div'>
+                    <label htmlFor="image" className="discussion_label">Image :</label>
+                    <input
+                        name="image"
+                        type="file"
+                        accept="image/*"
+                        onChange={updateImage}
+                        className='discussion_input_image'
+                    />
+                </div>
+                <div className='discussion_div'>
+                    <label htmlFor="body" className="discussion_label">Body</label>
+                    <textarea name="body" value={body} onChange={updateBody} className='discussion_text'/>
+                </div>
+                <div className="create">
+                    <button className="discussion-button" type="submit">Create Discussion</button>
+                </div>
+            </form>
+
+        </div>
     )
 }
 

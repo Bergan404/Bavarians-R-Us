@@ -8,6 +8,7 @@ import { findAllReviews } from '../../store/reviews'
 import { delExistingPost } from '../../store/posts'
 import ReviewPage from './reviews'
 import ReviewForm from '../auth/ReviewForm'
+import defaultImage from '../default_image.png'
 
 
 
@@ -39,22 +40,28 @@ const PostPage = (props) => {
 	};
 
     return (
-        <>
+        <div className="post_page" >
             {onePost.userId === userId?<button className="delete-button" onClick={handleDelete} >Delete</button>: null}
             <h1>{onePost.post_title}</h1>
-            <img src={onePost.image}></img>
-            <p>{onePost.description}</p>
-            <p>{onePost.year}, {onePost.model}</p>
-            <p>{onePost.price}</p>
-            <p>{onePost.in_stock}</p>
-            <p>{onePost.new_used}</p>
-            <p>{onePost.categoryId}</p>
-            <button className="add-to-cart-button" onClick={handleCartAdd} >Add To Cart</button>
+            <img src={onePost.image ? onePost.image : defaultImage} alt="post_image" className="post_image"></img>
+            <div className="post_properties">
+                <p className="post_description">{onePost.description}</p>
+                <p><strong>Year:</strong> {onePost.year}, <strong>Model:</strong> {onePost.model}</p>
+                <p className="post_price">{onePost.price}</p>
+                <p className="post_stock">{onePost.in_stock}</p>
+                {/* <p>{onePost.new_used}</p>
+                <p>{onePost.categoryId}</p> */}
+                <button className="add-to-cart-button" onClick={handleCartAdd} >Add To Cart</button>
+            </div>
 
-            <ReviewForm />
+            <div className="post_review_create">
+                <ReviewForm />
+            </div>
 
-            <ReviewPage />
-        </>
+            <div className="post_review">
+                <ReviewPage />
+            </div>
+        </div>
     )
 }
 

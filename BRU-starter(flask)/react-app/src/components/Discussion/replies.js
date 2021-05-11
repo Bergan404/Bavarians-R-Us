@@ -24,7 +24,9 @@ const ReplyPage = (props) => {
         <div>
             {
             oneDiscussion.replies?.length && oneDiscussion.replies.map((reply) =>(
-                <p>{reply.body}</p>
+                <div className="replies" >
+                    <p>{reply.body}</p>
+                </div>
             ))
           }
         </div>

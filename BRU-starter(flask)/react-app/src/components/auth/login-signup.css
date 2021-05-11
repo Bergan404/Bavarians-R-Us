@@ -2,13 +2,30 @@
     color: var(--red);
 }
 
+.login_background {
+    background-image: url(https://www.drifted.com/wp-content/uploads/2014/08/Formula-Drift-2014-Round-5-David-Hintze-45-of-203.jpg);
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* height: 100vh; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+}
 .login_form {
     width: 500px;
     border-radius: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 200px;
-    background-color: var(--lightgray);
+    margin-top: 250px;
+    background-color: var(--darkgray);
     padding: 20px;
     text-align: center;
     animation: fadeInAnimation ease 2s;
@@ -32,7 +49,7 @@
 .login_label {
     text-align: center;
     font-size: 25px;
-    color: var(--blue);
+    color: var(--red);
 }
 .login_input {
     width: 99%;
@@ -82,18 +99,35 @@
 }
 .login_to_signup {
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 15px;
 }
 
 
+.signup_background {
+    background-image: url(http://www.stancenation.com/wp-content/uploads/2013/04/110.jpg);
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* height: 100vh; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+}
 .signup_form {
     width: 500px;
     border-radius: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 150px;
-    background-color: var(--lightgray);
+    margin-top: 250px;
+    background-color: var(--darkgray);
     padding: 20px;
     text-align: center;
     animation: fadeInAnimation ease 2s;
@@ -116,7 +150,7 @@
 .signup_labels {
     text-align: center;
     font-size: 25px;
-    color: var(--blue);
+    color: var(--red);
 }
 .signup_inputs {
     width: 99%;

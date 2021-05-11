@@ -4,6 +4,8 @@ import { Redirect, useHistory, useParams } from "react-router-dom";
 import { replyCreate } from '../../store/reply_create'
 import { findOneDiscussion } from '../../store/oneDiscussion'
 
+import './review_reply.css';
+
 
 const ReplyForm = () => {
     const dispatch = useDispatch();
@@ -30,11 +32,11 @@ const ReplyForm = () => {
     return (
         <form onSubmit={onReplyCreation}>
             <div className='server_div'>
-                <label>Leave a Reply</label>
-                <textarea value={body} onChange={updateBody} />
+                <label className="reply_label">Leave a Reply</label>
+                <textarea value={body} onChange={updateBody} className="reply_text"/>
             </div>
             <div className="create">
-                <button className="server-button" type="submit">Create Review</button>
+                <button className="reply-button" type="submit">Create Review</button>
             </div>
         </form>
     )

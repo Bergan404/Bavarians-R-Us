@@ -37,7 +37,7 @@ class User(db.Model, UserMixin):
             "id": self.id,
             "username": self.username,
             "email": self.email,
-            "image": self.image
+            "image": self.image,
         }
 
 
@@ -136,7 +136,7 @@ class Review(db.Model):
             "userId": self.userId,
             "postId": self.postId,
             "body": self.body,
-            "created_at": self.created_at
+            "created_at": self.created_at,
         }
 
 # ------------------------------Replies Table ----------------------------------
