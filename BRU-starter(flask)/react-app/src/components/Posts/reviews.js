@@ -6,8 +6,9 @@ import { findOnePost } from '../../store/onePost'
 import { addThePost } from '../../store/add_post'
 import { findAllReviews } from '../../store/reviews'
 import { findAllUsers } from '../../store/all_users'
-
-
+import Moment from "react-moment";
+import "moment-timezone";
+import defaultImage from '../default_user.jpeg'
 
 
 const ReviewPage = (props) => {
@@ -29,10 +30,18 @@ const ReviewPage = (props) => {
         <div>
             {
             onePost.reviews?.length && onePost.reviews.map((review) =>(
-                <div className="review">
-                    <p>{review.body}</p>
-                </div>
-            ))
+                <>
+                    <div className="review">
+                        <div className="the_author">
+                            <img src={review.author_image ? review.author_image : defaultImage} alt="author_image" className="author_image"/>
+                            <h4 className="review_author">{review.author}</h4>
+                        </div>
+                        <p>{review.body}</p>
+                        {/* <Moment local date={review.created_at} format="hh:mm" tz="Atlantic/Reykjavik" /> */}
+                        <Moment local date={review.created_at} fromNow className="moment"></Moment>
+                    </div>
+                </>
+            )).reverse()
           }
         </div>
     )

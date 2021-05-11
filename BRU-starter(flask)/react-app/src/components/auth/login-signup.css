@@ -159,6 +159,9 @@
     border-radius: 24px;
     border: none;
 }
+.signup_inputs_label {
+    margin-left: 10px;
+}
 .signup_signup {
     padding: 5px;
     color: white;

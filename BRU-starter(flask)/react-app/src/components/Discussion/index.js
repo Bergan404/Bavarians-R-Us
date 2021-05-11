@@ -30,7 +30,9 @@ const PostPage = (props) => {
 
     return (
         <div className="discussion_page">
-            {oneDiscussion.userId === userId?<button className="delete-button" onClick={handleDelete} >Delete</button>: null}
+            <div className="post_delete">
+                <h4 className="post_author">{oneDiscussion.author}</h4>{oneDiscussion.userId === userId?<button className="delete-button" onClick={handleDelete} >Delete</button>: null}
+            </div>
             <h1>{oneDiscussion.discussion_title}</h1>
             <img src={oneDiscussion.image ? oneDiscussion.image : defaultImage} alt="discussion_image" className="discussion_image"></img>
             <p className="discussion_body">{oneDiscussion.body}</p>

@@ -41,7 +41,9 @@ const PostPage = (props) => {
 
     return (
         <div className="post_page" >
-            {onePost.userId === userId?<button className="delete-button" onClick={handleDelete} >Delete</button>: null}
+            <div className="post_delete">
+                <h4 className="post_author">{onePost.author}</h4>{onePost.userId === userId?<button className="delete-button" onClick={handleDelete} >Delete</button>: null}
+            </div>
             <h1>{onePost.post_title}</h1>
             <img src={onePost.image ? onePost.image : defaultImage} alt="post_image" className="post_image"></img>
             <div className="post_properties">

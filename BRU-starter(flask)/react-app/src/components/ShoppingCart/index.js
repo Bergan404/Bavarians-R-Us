@@ -35,7 +35,7 @@ const ShoppingCart = () => {
             <h1 className="cart_header" >Shopping Cart</h1>
             <div className="cart_posts" >
                 {
-                    addThePost?.length && addThePost.map((post) => (
+                    addThePost?.length === 0 ? <p className="cart_empty" >Cart Is Empty</p> : addThePost.map((post) => (
                     <div className="each_post" >
                         <NavLink key={post.id} to={`/posts/${post.id}`}>
                             <img src={post.image ? post.image : defaultImage}  alt="post-image" />

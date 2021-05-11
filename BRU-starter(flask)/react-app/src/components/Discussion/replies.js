@@ -4,6 +4,9 @@ import { findAllCategories } from '../../store/category'
 import { NavLink, useHistory, useParams } from 'react-router-dom';
 import { findOneDiscussion } from '../../store/oneDiscussion'
 import { delExistingDiscussion } from '../../store/discussion_create'
+import Moment from "react-moment";
+import "moment-timezone";
+import defaultImage from '../default_user.jpeg'
 
 
 const ReplyPage = (props) => {
@@ -25,9 +28,14 @@ const ReplyPage = (props) => {
             {
             oneDiscussion.replies?.length && oneDiscussion.replies.map((reply) =>(
                 <div className="replies" >
+                    <div className="the_author">
+                            <img src={reply.author_image ? reply.author_image : defaultImage} alt="author_image" className="author_image"/>
+                            <h4 className="review_author">{reply.author}</h4>
+                        </div>
                     <p>{reply.body}</p>
+                    <Moment local fromNow tz="Atlantic/Reykjavik" className="moment">{reply.created_at}</Moment>
                 </div>
-            ))
+            )).reverse()
           }
         </div>
     )

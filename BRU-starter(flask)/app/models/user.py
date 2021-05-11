@@ -58,7 +58,7 @@ class Post(db.Model):
     userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     categoryId = db.Column(db.Integer, db.ForeignKey(
         'categories.id'), nullable=False)
-    created_at = db.Column(db.Date)
+    created_at = db.Column(db.DateTime)
 
     # Relations
     creator = db.relationship('User', back_populates="post_creator")
@@ -82,7 +82,8 @@ class Post(db.Model):
             "userId": self.userId,
             "categoryId": self.categoryId,
             "created_at": self.created_at,
-            'reviews': [review.to_dict() for review in self.user_post]
+            'reviews': [review.to_dict() for review in self.user_post],
+            "author": self.creator.username
         }
 
 # ------------------------------Discussions Table ----------------------------------
@@ -96,7 +97,7 @@ class Discussion(db.Model):
     body = db.Column(db.Text)
     image = db.Column(db.String(255))
     userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    created_at = db.Column(db.Date)
+    created_at = db.Column(db.DateTime)
 
     # Relations
     discussion = db.relationship('User', back_populates="discussion_creator")
@@ -111,7 +112,8 @@ class Discussion(db.Model):
             "image": self.image,
             "userId": self.userId,
             "created_at": self.created_at,
-            'replies': [reply.to_dict() for reply in self.discussion_post]
+            'replies': [reply.to_dict() for reply in self.discussion_post],
+            "author": self.discussion.username
         }
 
 # ------------------------------Reviews Table ----------------------------------
@@ -124,7 +126,7 @@ class Review(db.Model):
     userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     postId = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
     body = db.Column(db.Text)
-    created_at = db.Column(db.Date)
+    created_at = db.Column(db.DateTime)
 
     # Relations
     creator_review = db.relationship('User', back_populates="user_review")
@@ -137,6 +139,8 @@ class Review(db.Model):
             "postId": self.postId,
             "body": self.body,
             "created_at": self.created_at,
+            "author": self.creator_review.username,
+            "author_image": self.creator_review.image
         }
 
 # ------------------------------Replies Table ----------------------------------
@@ -150,7 +154,7 @@ class Reply(db.Model):
     discussionId = db.Column(db.Integer, db.ForeignKey(
         'discussions.id'), nullable=False)
     body = db.Column(db.Text)
-    created_at = db.Column(db.Date)
+    created_at = db.Column(db.DateTime)
 
     # Relations
     user_reply = db.relationship('User', back_populates="creator_reply")
@@ -163,7 +167,9 @@ class Reply(db.Model):
             "userId": self.userId,
             "discussionId": self.discussionId,
             "body": self.body,
-            "created_at": self.created_at
+            "created_at": self.created_at,
+            "author": self.user_reply.username,
+            "author_image": self.user_reply.image
         }
 
 # ------------------------------Categories Table ----------------------------------
@@ -174,7 +180,7 @@ class Category(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     category = db.Column(db.String(100))
-    created_at = db.Column(db.Date)
+    created_at = db.Column(db.DateTime)
 
     # Relations
     post_category = db.relationship('Post', back_populates='category')
@@ -195,7 +201,7 @@ class ShoppingCart(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    created_at = db.Column(db.Date)
+    created_at = db.Column(db.DateTime)
 
     # Relations
     user_cart = db.relationship('User', back_populates="creator_cart")

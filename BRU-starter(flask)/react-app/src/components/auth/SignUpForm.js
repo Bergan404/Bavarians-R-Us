@@ -10,13 +10,14 @@ const SignUpForm = () => {
   const user = useSelector(state => state.session.user);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [image, setImage] = useState(null);
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      await dispatch(signUp(username, email, password));
+      await dispatch(signUp(username, email, password, image));
     }
   };
 
@@ -34,6 +35,11 @@ const SignUpForm = () => {
 
   const updateRepeatPassword = (e) => {
     setRepeatPassword(e.target.value);
+  };
+
+  const updateImage = (e) => {
+    const file = e.target.files[0];
+    setImage(file)
   };
 
   if (user) {
@@ -61,6 +67,17 @@ const SignUpForm = () => {
             onChange={updateEmail}
             value={email}
             className="signup_inputs"
+          ></input>
+        </div>
+        <div className='signup_divs'>
+          <label className="signup_labels">Image :</label>
+          <input
+            name="image"
+            type="file"
+            placeholder="Select Image"
+            accept="image/*"
+            onChange={updateImage}
+            className="signup_inputs_label"
           ></input>
         </div>
         <div className="signup_divs">

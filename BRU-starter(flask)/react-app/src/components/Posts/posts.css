@@ -48,8 +48,16 @@
 }
 
 
+.post_delete {
+    position: relative;
+    margin-bottom: 5px;
+}
+.post_author {
+    display: inline-block;
+    margin-right: 10px;
+}
 .delete-button {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     font-size: 17px;
     padding: 5px;
     border: none;
@@ -126,4 +134,25 @@
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: var(--lightgray);
+}
+.the_author {
+    display: flex;
+    border-bottom: 2px solid black;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+.review_author {
+    margin-bottom: 8px;
+}
+.author_image {
+    width: 40px;
+    border-radius: 50px;
+    position: relative;
+    bottom: 10px;
+    margin-right: 6px;
+}
+.moment {
+    font-size: 15px;
+    color: #888888;
+    margin-top: 10px;
 }

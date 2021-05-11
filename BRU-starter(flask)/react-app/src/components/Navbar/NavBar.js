@@ -22,6 +22,12 @@ const NavBar = () => {
           </NavLink>
         </div>
       </div>
+      <div className="nav_left_search">
+        <form action="">
+          <input type="text" name="search" className="search_input" />
+          <button type="submit" className="search_button" ><i class="fa fa-search"></i></button>
+        </form>
+      </div>
       <div className="nav_right">
         {
           user ? " " :

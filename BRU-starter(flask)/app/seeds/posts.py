@@ -18,7 +18,7 @@ def seed_posts():
             created_at = datetime.now()
             seed_message = Review(userId=user_id, postId=post_id, body=body, created_at=created_at)
             db.session.add(seed_message)
-    auto_seed(50, 50, 4)
+    auto_seed(100, 50, 14)
 
     first_post = Post(post_title="Thermostat", image='https://3a663eb0fef48c6d2d60-a88f8ebfcdb877ad223e888bfcb7f7ec.ssl.cf1.rackcdn.com/97312_x800.webp',
                       description='This is a used part for a bmw e90 series.', year='06-10',

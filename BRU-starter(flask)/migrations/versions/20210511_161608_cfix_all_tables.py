@@ -1,8 +1,8 @@
-"""create all tables
+"""cfix all tables
 
-Revision ID: bc84ab8c43a4
+Revision ID: bc6eac9bf6d6
 Revises: 
-Create Date: 2021-05-09 09:13:24.912699
+Create Date: 2021-05-11 16:16:08.041429
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'bc84ab8c43a4'
+revision = 'bc6eac9bf6d6'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,7 +21,7 @@ def upgrade():
     op.create_table('categories',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('category', sa.String(length=100), nullable=True),
-    sa.Column('created_at', sa.Date(), nullable=True),
+    sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('users',
@@ -40,7 +40,7 @@ def upgrade():
     sa.Column('body', sa.Text(), nullable=True),
     sa.Column('image', sa.String(length=255), nullable=True),
     sa.Column('userId', sa.Integer(), nullable=False),
-    sa.Column('created_at', sa.Date(), nullable=True),
+    sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
@@ -56,7 +56,7 @@ def upgrade():
     sa.Column('new_used', sa.Boolean(), nullable=False),
     sa.Column('userId', sa.Integer(), nullable=False),
     sa.Column('categoryId', sa.Integer(), nullable=False),
-    sa.Column('created_at', sa.Date(), nullable=True),
+    sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.ForeignKeyConstraint(['categoryId'], ['categories.id'], ),
     sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
@@ -64,7 +64,7 @@ def upgrade():
     op.create_table('shoppingcarts',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('userId', sa.Integer(), nullable=False),
-    sa.Column('created_at', sa.Date(), nullable=True),
+    sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
@@ -73,7 +73,7 @@ def upgrade():
     sa.Column('userId', sa.Integer(), nullable=False),
     sa.Column('discussionId', sa.Integer(), nullable=False),
     sa.Column('body', sa.Text(), nullable=True),
-    sa.Column('created_at', sa.Date(), nullable=True),
+    sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.ForeignKeyConstraint(['discussionId'], ['discussions.id'], ),
     sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
@@ -83,7 +83,7 @@ def upgrade():
     sa.Column('userId', sa.Integer(), nullable=False),
     sa.Column('postId', sa.Integer(), nullable=False),
     sa.Column('body', sa.Text(), nullable=True),
-    sa.Column('created_at', sa.Date(), nullable=True),
+    sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.ForeignKeyConstraint(['postId'], ['posts.id'], ),
     sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')

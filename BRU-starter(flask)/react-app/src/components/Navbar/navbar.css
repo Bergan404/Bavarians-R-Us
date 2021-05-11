@@ -14,6 +14,23 @@
 .nav_left {
     padding: 20px;
 }
+.nav_left_search {
+    padding-top: 27px;
+}
+.search_input {
+    padding: 6px;
+    font-size: 20px;
+    width: 500px;
+    border: none;
+    border: 1px solid #cccccc;
+}
+.search_button {
+    padding: 7px;
+    background: none;
+    border: none;
+    background-color: var(--lightblue);
+    font-size: 20px;
+}
 .logo {
     display: flex;
     text-decoration: none;
