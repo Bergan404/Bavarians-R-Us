@@ -9,7 +9,7 @@
 This is the page the user will see the moment they arrive at the site and as a spash page it gives the user the ability to see what the site has to offer.
 
 ## The Discussion Create Page
-1[discussion_create](https://github.com/Bergan404/Bavarians-R-Us/blob/main/imagesForWiki/Screen%20Shot%202021-05-12%20at%2011.29.22%20AM.png)
+![discussion_create](https://github.com/Bergan404/Bavarians-R-Us/blob/main/imagesForWiki/Screen%20Shot%202021-05-12%20at%2011.29.22%20AM.png)
 
 On this page the user has the option to post a discussion for other users on the site to be able to comment and reply to help them with either an issue of a certain topic or even talk about something they like.
 
