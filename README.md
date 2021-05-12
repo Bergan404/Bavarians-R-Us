@@ -28,5 +28,5 @@ After a post is created the user will be brought to this page where they can see
 
 This is the discussion page and this is where all the conversations will other users will begin, a user can reply and chat with other users regarding the discussion at hand.
 
-## [Full Site](https://bavarians-r-us.herokuapp.com/)
-## [Full Wiki](https://github.com/Bergan404/Bavarians-R-Us/wiki)
+***[Full Site](https://bavarians-r-us.herokuapp.com/)*** |
+***[Full Wiki](https://github.com/Bergan404/Bavarians-R-Us/wiki)***
