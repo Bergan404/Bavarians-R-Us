@@ -17,3 +17,16 @@ On this page the user has the option to post a discussion for other users on the
 ![post_create](https://github.com/Bergan404/Bavarians-R-Us/blob/main/imagesForWiki/Screen%20Shot%202021-05-12%20at%2011.29.33%20AM.png)
 
 This page allows the user to come to the site to sell a part that they have wether it be new or used, any user that has spare parts just laying around can easily come create and post and hope to sell it in due time
+
+## The Post Page
+![post_page](https://github.com/Bergan404/Bavarians-R-Us/blob/main/imagesForWiki/Screen%20Shot%202021-05-12%20at%2011.30.04%20AM.png)
+
+After a post is created the user will be brought to this page where they can see their post up for all the users to see, and as a user you can easily delete your post and review others products.
+
+## The Discussion Page
+![discussion_page](https://github.com/Bergan404/Bavarians-R-Us/blob/main/imagesForWiki/Screen%20Shot%202021-05-12%20at%2011.30.21%20AM.png)
+
+This is the discussion page and this is where all the conversations will other users will begin, a user can reply and chat with other users regarding the discussion at hand.
+
+## [Full Site](https://bavarians-r-us.herokuapp.com/)
+## [Full Wiki](https://github.com/Bergan404/Bavarians-R-Us/wiki)
