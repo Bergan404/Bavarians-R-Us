@@ -29,19 +29,18 @@ const ReviewPage = (props) => {
     return (
         <div>
             {
-            onePost.reviews?.length && onePost.reviews.map((review) =>(
-                <>
-                    <div className="review">
-                        <div className="the_author">
-                            <img src={review.author_image ? review.author_image : defaultImage} alt="author_image" className="author_image"/>
-                            <h4 className="review_author">{review.author}</h4>
+                onePost.reviews?.length  === 0 ? <p className="cart_empty" >No Reviews Yet</p> : onePost.reviews?.map((review) =>(
+                    <>
+                        <div className="review">
+                            <div className="the_author">
+                                <img src={review.author_image ? review.author_image : defaultImage} alt="author_image" className="author_image"/>
+                                <h4 className="review_author">{review.author}</h4>
+                            </div>
+                            <p>{review.body}</p>
+                            <Moment local date={review.created_at} fromNow className="moment"></Moment>
                         </div>
-                        <p>{review.body}</p>
-                        {/* <Moment local date={review.created_at} format="hh:mm" tz="Atlantic/Reykjavik" /> */}
-                        <Moment local date={review.created_at} fromNow className="moment"></Moment>
-                    </div>
-                </>
-            )).reverse()
+                    </>
+                )).reverse()
           }
         </div>
     )

@@ -26,7 +26,7 @@ const ReplyPage = (props) => {
     return (
         <div>
             {
-            oneDiscussion.replies?.length && oneDiscussion.replies.map((reply) =>(
+            oneDiscussion.replies?.length  === 0 ? <p className="cart_empty" >No Replies Yet</p> : oneDiscussion.replies?.map((reply) =>(
                 <div className="replies" >
                     <div className="the_author">
                             <img src={reply.author_image ? reply.author_image : defaultImage} alt="author_image" className="author_image"/>
