@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import logo from '../bmw-logo.png'
 
 import './navbar.css'
 
 const NavBar = () => {
+  const history = useHistory()
   const user = useSelector(state => state.session.user)
   const categories = useSelector(state => state.categories.categories)
+  const [searchTerm, setSearchTerm] = useState('')
 
-  console.log(categories)
+  const searchGo = async (e) => {
+    e.preventDefault();
+
+    history.push(`/search/${searchTerm}`)
+  }
 
   return (
     <nav className="nav_container">
@@ -23,9 +29,9 @@ const NavBar = () => {
         </div>
       </div>
       <div className="nav_left_search">
-        <form action="">
-          <input type="text" name="search" className="search_input" />
-          <button type="submit" className="search_button" ><i class="fa fa-search"></i></button>
+        <form>
+          <input type="text" name="search" className="search_input" onChange={(e) => setSearchTerm(e.target.value)}/>
+          <button type="submit" className="search_button" onClick={searchGo}><i class="fa fa-search"></i></button>
         </form>
       </div>
       <div className="nav_right">

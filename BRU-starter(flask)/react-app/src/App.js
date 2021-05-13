@@ -19,6 +19,7 @@ import AllDiscussions from '../src/components/Discussion/all_discussions'
 import AllPosts from '../src/components/Posts/all_posts'
 import ShoppingCart from '../src/components/ShoppingCart/index'
 import CategoryPage from '../src/components/Navbar/CategoryPage'
+import SearchPage from '../src/components/Search/index'
 
 function App() {
   // const [authenticated, setAuthenticated] = useState(false);
@@ -71,9 +72,9 @@ function App() {
         <Route path="/category/:categoryId" exact={true}>
           <CategoryPage />
         </Route>
-        {/* <ProtectedRoute path="/users" exact={true} >
-          <UsersList/>
-        </ProtectedRoute> */}
+        <Route path="/search/:searchTerm" exact={true}>
+          <SearchPage />
+        </Route>
         <ProtectedRoute path="/users/:userId" exact={true} >
           <User />
         </ProtectedRoute>
