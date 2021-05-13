@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify, session, request
 from app.models import User, db
 from app.forms import LoginForm
 from app.forms import SignUpForm
+from app.models.user import ShoppingCart
 from flask_login import current_user, login_user, logout_user, login_required
 from app.helpers import (upload_file_to_s3, allowed_file, get_unique_filename)
 
@@ -79,7 +80,9 @@ def sign_up():
             password=form.data['password'],
             image=url
         )
+        new_cart = ShoppingCart(user_cart=user)
         db.session.add(user)
+        db.session.add(new_cart)
         db.session.commit()
         login_user(user)
         return user.to_dict()
