@@ -163,7 +163,7 @@ class Reply(db.Model):
     user_reply = db.relationship('User', back_populates="creator_reply")
     user_discussion = db.relationship(
         'Discussion', back_populates="discussion_post")
-    user_to_reply = db.relationship('UserReply', back_populates="reply_to_user")
+    user_to_reply = db.relationship('UserReply', cascade="all,delete", back_populates="reply_to_user")
 
     def to_dict(self):
         return {

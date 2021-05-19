@@ -36,7 +36,6 @@ def create_reply():
 @replies.route('/', methods=['DELETE'])
 def delete_reply():
     replyId = request.json
-    print(replyId, "=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-")
     reply = Reply.query.get(replyId)
     db.session.delete(reply)
     db.session.commit()

@@ -6,8 +6,9 @@ const createReply = (reply) => ({
     payload: reply
 })
 
-const deleteReply = () => ({
-    type: DELETE_REPLY
+const deleteReply = (id) => ({
+    type: DELETE_REPLY,
+    payload: id
 })
 
 export const delExistingReply = (replyId) => async (dispatch) => {
@@ -18,7 +19,7 @@ export const delExistingReply = (replyId) => async (dispatch) => {
         },
         body: JSON.stringify(replyId)
     })
-    dispatch(deleteReply())
+    dispatch(deleteReply(replyId))
 }
 
 export const replyCreate = (body, discussionId, created_at) => async (dispatch) => {
@@ -44,8 +45,9 @@ export default function createReducer(state = { create: {} }, action) {
         case CREATE_REPLY:
             return action.payload;
         case DELETE_REPLY:
-            state = {}
-            return state
+            const newState = {...state}
+            delete newState[action.payload]
+            return newState
         default:
             return state;
 

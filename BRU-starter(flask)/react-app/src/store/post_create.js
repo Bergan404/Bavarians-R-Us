@@ -42,20 +42,6 @@ export const postCreate = (post_title, image, description, year, model, price, i
 
     const response = await fetch("/api/posts/create", {
         method: "POST",
-        // headers: {
-        //     "Content-Type": "application/json",
-        // },
-        // body: JSON.stringify({
-        //     post_title,
-        //     image,
-        //     description,
-        //     year,
-        //     model,
-        //     price,
-        //     in_stock,
-        //     new_used,
-        //     categoryId
-        // }),
         body: formData
     });
     const data = await response.json();
