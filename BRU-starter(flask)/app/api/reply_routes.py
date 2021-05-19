@@ -31,3 +31,14 @@ def create_reply():
         db.session.commit()
         return reply.to_dict()
     return "didnt go thru", 404
+
+
+@replies.route('/', methods=['DELETE'])
+def delete_reply():
+    replyId = request.json
+    print(replyId, "=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-")
+    reply = Reply.query.get(replyId)
+    db.session.delete(reply)
+    db.session.commit()
+    replies = Reply.query.all()
+    return {'reply': [reply.to_dict() for reply in replies]}
