@@ -32,6 +32,7 @@ def create_review():
         review = Review(
             userId=form.data['userId'],
             postId=form.data['postId'],
+            rating=form.data['rating'],
             body=form.data['body'],
             created_at=form.data['created_at']
         )

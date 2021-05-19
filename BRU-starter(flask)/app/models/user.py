@@ -125,6 +125,7 @@ class Review(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     postId = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
+    rating = db.Column(db.Integer)
     body = db.Column(db.Text)
     created_at = db.Column(db.DateTime)
 
@@ -137,6 +138,7 @@ class Review(db.Model):
             "id": self.id,
             "userId": self.userId,
             "postId": self.postId,
+            "rating": self.rating,
             "body": self.body,
             "created_at": self.created_at,
             "author": self.creator_review.username,

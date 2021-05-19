@@ -1,8 +1,8 @@
-"""cfix all tables
+"""cadd to table
 
-Revision ID: bc6eac9bf6d6
+Revision ID: 234731fcdff2
 Revises: 
-Create Date: 2021-05-11 16:16:08.041429
+Create Date: 2021-05-19 12:01:26.146784
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'bc6eac9bf6d6'
+revision = '234731fcdff2'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -82,6 +82,7 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('userId', sa.Integer(), nullable=False),
     sa.Column('postId', sa.Integer(), nullable=False),
+    sa.Column('rating', sa.Integer(), nullable=True),
     sa.Column('body', sa.Text(), nullable=True),
     sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.ForeignKeyConstraint(['postId'], ['posts.id'], ),

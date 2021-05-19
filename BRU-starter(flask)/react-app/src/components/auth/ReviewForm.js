@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory, useParams } from "react-router-dom";
 import { reviewCreate } from '../../store/review_create'
 import { findOnePost } from '../../store/onePost'
+import StarRatingComponent from 'react-star-rating-component';
 
 import './review_reply.css';
 
@@ -11,6 +12,7 @@ const ReviewForm = () => {
     const dispatch = useDispatch();
     // const [errors, setErrors] = useState([]);
     const [body, setBody] = useState();
+    const [rating, setRating] = useState(1)
 
     const { postId } = useParams();
 
@@ -20,8 +22,7 @@ const ReviewForm = () => {
 
 
     const onReviewCreation = async (e) => {
-        // e.preventDefault();
-        await dispatch(reviewCreate(body, postId));
+        await dispatch(reviewCreate(rating, body, postId));
 
     }
 
@@ -29,11 +30,22 @@ const ReviewForm = () => {
         setBody(e.target.value);
     }
 
+    const onStarClick = (e) => {
+        setRating(e);
+        console.log(rating)
+      }
+
 
     return (
         <form onSubmit={onReviewCreation}>
             <div className='server_div'>
-                <label className="review_label">Leave a Review</label>
+                <label className="review_label">Leave a Review {rating}</label>
+                <StarRatingComponent
+                    name="rate1"
+                    starCount={5}
+                    value={rating}
+                    onStarClick={onStarClick}
+                />
                 <textarea value={body} onChange={updateBody} className="review_text" />
             </div>
             <div className="create">

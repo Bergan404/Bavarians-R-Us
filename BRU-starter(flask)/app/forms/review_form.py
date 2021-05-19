@@ -8,4 +8,5 @@ class ReviewForm(FlaskForm):
     userId = IntegerField('userId')
     postId = IntegerField('postId')
     body = TextAreaField('body', validators=[DataRequired()])
+    rating = IntegerField('rating')
     created_at = DateTimeField('created_at', default=datetime.now())

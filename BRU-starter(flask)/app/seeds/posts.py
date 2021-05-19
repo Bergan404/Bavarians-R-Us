@@ -14,9 +14,10 @@ def seed_posts():
         for i in range(count):
             user_id = random.randint(1, user_count)
             post_id = random.randint(1, post_count)
+            rating = random.randint(1, 5)
             body = fake.paragraph(nb_sentences=random.randint(1, 5))
             created_at = datetime.now()
-            seed_message = Review(userId=user_id, postId=post_id, body=body, created_at=created_at)
+            seed_message = Review(userId=user_id, postId=post_id, body=body, rating=rating, created_at=created_at)
             db.session.add(seed_message)
     auto_seed(100, 50, 14)
 
