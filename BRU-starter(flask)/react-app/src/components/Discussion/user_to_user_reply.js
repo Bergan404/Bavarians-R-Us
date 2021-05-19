@@ -15,10 +15,10 @@ const UserReplyPage = ({reply}) => {
     return (
         <div>
             {
-                reply.reply?.length && reply.reply.map((replies) => (
+                reply.reply?.length === 0 ? <p className="no_replies" >No Replies Yet</p> : reply.reply.map((replies) => (
                     <div className="replies" >
-                        <div className="the_author">
-                            <div>
+                        <div className="user_to_user_reply1">
+                            <div className="user_to_user_reply">
                                 <img src={replies.author_image ? replies.author_image : defaultImage} alt="author_image" className="author_image" />
                                 <h4 className="review_author">{replies.author}</h4>
                             </div>

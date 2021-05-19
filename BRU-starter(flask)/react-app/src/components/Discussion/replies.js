@@ -51,7 +51,8 @@ const ReplyPage = (props) => {
                     </div>
                     <p>{reply.body}</p>
                     <Moment local fromNow tz="Atlantic/Reykjavik" className="moment">{reply.created_at}</Moment>
-                    <button onClick={() => setReveal(!reveal)}>Reply</button>
+                    <br></br>
+                    <button onClick={() => setReveal(!reveal)} className="show_reply" >Reply</button>
                     {
                         reveal && <UserReplyForm replyId={reply.id} />
                     }
