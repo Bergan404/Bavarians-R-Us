@@ -2,20 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory, useParams } from "react-router-dom";
 import { userReplyCreate } from '../../store/user_to_user_reply'
-import { findOneDiscussion } from '../../store/oneDiscussion'
 
 import './review_reply.css';
 
 const UserReplyForm = ({replyId}) => {
     const dispatch = useDispatch();
     const [body, setBody] = useState();
-
-    // const { replyId } = useParams();
-
-    useEffect(async () => {
-        await dispatch(findOneDiscussion(replyId))
-    }, [dispatch])
-
 
     const onUserReplyCreation = async (e) => {
         // e.preventDefault();

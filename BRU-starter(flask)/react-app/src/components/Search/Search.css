@@ -1,0 +1,17 @@
+.search_header {
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 2px solid black;
+    width: fit-content;
+    margin-top: 20px;
+}
+.search_posts {
+    text-align: center;
+    color: var(--red);
+    margin-top: 20px;
+}
+.search_discussions {
+    text-align: center;
+    color: var(--red);
+    margin-top: 20px;
+}

@@ -6,19 +6,27 @@ import "moment-timezone";
 import defaultImage from '../default_user.jpeg'
 
 
-const UserReplyPage = (props) => {
-    const oneDiscussion = useSelector(state => state.oneDiscussion)
+const UserReplyPage = ({reply}) => {
+    const userReply = useSelector(state => state.oneDiscussion)
     const userId = useSelector(state => state.session.user.id)
+
+    console.log(userReply)
 
     return (
         <div>
             {
-            oneDiscussion.replies?.length  === 0 ? <p className="cart_empty" >No Replies Yet</p> : oneDiscussion.replies?.map((reply) =>(
-                <div className="replies" >
-                    
-                </div>
-            )).reverse()
-          }
+                reply.reply?.length && reply.reply.map((replies) => (
+                    <div className="replies" >
+                        <div className="the_author">
+                            <div>
+                                <img src={replies.author_image ? replies.author_image : defaultImage} alt="author_image" className="author_image" />
+                                <h4 className="review_author">{replies.author}</h4>
+                            </div>
+                        <p>{replies.body}</p>
+                        </div>
+                    </div>
+                ))
+            }
         </div>
     )
 }

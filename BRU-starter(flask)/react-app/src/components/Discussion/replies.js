@@ -9,6 +9,7 @@ import "moment-timezone";
 import defaultImage from '../default_user.jpeg'
 import { delExistingReply } from '../../store/reply_create'
 import UserReplyForm from '../auth/UserReplyForm'
+import UserReplyPage from './user_to_user_reply'
 
 
 const ReplyPage = (props) => {
@@ -54,6 +55,9 @@ const ReplyPage = (props) => {
                     {
                         reveal && <UserReplyForm replyId={reply.id} />
                     }
+                    <div>
+                        <UserReplyPage reply={reply} />
+                    </div>
                 </div>
             )).reverse()
           }
