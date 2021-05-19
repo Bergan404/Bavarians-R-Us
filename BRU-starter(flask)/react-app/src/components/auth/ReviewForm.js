@@ -32,7 +32,6 @@ const ReviewForm = () => {
 
     const onStarClick = (e) => {
         setRating(e);
-        console.log(rating)
       }
 
 

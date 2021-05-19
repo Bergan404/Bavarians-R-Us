@@ -17,9 +17,6 @@ const HomePage = () => {
   const discussions = useSelector(state => state.discussion)
   const posts = useSelector(state => state.posts)
 
-  console.log(discussions)
-  console.log(posts)
-
   useEffect(async () => {
     await dispatch(findAllUsers())
     await dispatch(findAllDiscussions())
@@ -36,7 +33,7 @@ const HomePage = () => {
             <div className="homepage_discussions" >
               {
                 discussions?.length && discussions.slice(0, 6).map((discussion) => (
-                  <div className="each_discussion" >
+                  <div className="each_discussion" key={discussion.id}>
                     <NavLink key={discussion.id} to={`/discussion/${discussion.id}`} >
                         <h3 className="discussion_title" >{discussion.discussion_title}</h3>
                         <img src={discussion.image ? discussion.image : defaultImage}  alt="discussion-image"/>
@@ -53,7 +50,7 @@ const HomePage = () => {
             <div className="homepage_posts" >
               {
                 posts?.length && posts.slice(0, 3).map((post) => (
-                  <div className="each_post">
+                  <div className="each_post" key={post.id}>
                     <NavLink key={post.id} to={`/posts/${post.id}`}>
                         <img src={post.image ? post.image : defaultImage}  alt="post-image" />
                         <h3 className="post_title" >{post.post_title}</h3>

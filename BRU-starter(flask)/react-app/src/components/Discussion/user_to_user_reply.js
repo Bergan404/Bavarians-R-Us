@@ -10,13 +10,11 @@ const UserReplyPage = ({reply}) => {
     const userReply = useSelector(state => state.oneDiscussion)
     const userId = useSelector(state => state.session.user.id)
 
-    console.log(userReply)
-
     return (
         <div>
             {
                 reply.reply?.length === 0 ? <p className="no_replies" >No Replies Yet</p> : reply.reply.map((replies) => (
-                    <div className="replies" >
+                    <div className="replies" key={replies.id} >
                         <div className="user_to_user_reply1">
                             <div className="user_to_user_reply">
                                 <img src={replies.author_image ? replies.author_image : defaultImage} alt="author_image" className="author_image" />

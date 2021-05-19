@@ -28,7 +28,7 @@ const CategoryPage = () => {
             <div className="homepage_posts_page">
                 {
                     categoryPosts?.length && categoryPosts.map((post) => (
-                    <div className="each_post">
+                    <div className="each_post" key={post.id}>
                         <NavLink key={post.id} to={`/posts/${post.id}`}>
                             <img src={post.image ? post.image : defaultImage} alt="post-image" />
                             <h3 className="post_title">{post.post_title}</h3>

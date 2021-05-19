@@ -31,7 +31,7 @@ const NavBar = () => {
       <div className="nav_left_search">
         <form>
           <input type="text" name="search" className="search_input" onChange={(e) => setSearchTerm(e.target.value)}/>
-          <button type="submit" className="search_button" onClick={searchGo}><i class="fa fa-search"></i></button>
+          <button type="submit" className="search_button" onClick={searchGo}><i className="fa fa-search"></i></button>
         </form>
       </div>
       <div className="nav_right">

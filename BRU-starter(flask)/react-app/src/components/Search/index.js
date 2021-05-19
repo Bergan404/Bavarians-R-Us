@@ -34,7 +34,7 @@ const SearchPage = () => {
       <div className="homepage_posts_page">
         {
           newSearch?.map((post) => (
-            <div className='each_post_page'>
+            <div className='each_post_page' key={post.id}>
               <NavLink to={`/posts/${post.id}`} className='searchDiv'>
                 <img src={post.image ? post.image : defaultImage} alt="post-image" />
                 <h3 className="post_title">{post.post_title}</h3>
@@ -51,7 +51,7 @@ const SearchPage = () => {
       <div className="homepage_discussions_page">
         {
           newerSearch?.map((discussion) => (
-            <div className="each_discussion">
+            <div className="each_discussion" key={discussion.id}>
               <NavLink key={discussion.id} to={`/discussion/${discussion.id}`}>
                 <h3 className="discussion_title">{discussion.discussion_title}</h3>
                 <img src={discussion.image ? discussion.image : defaultImage} alt="discussion-image" />

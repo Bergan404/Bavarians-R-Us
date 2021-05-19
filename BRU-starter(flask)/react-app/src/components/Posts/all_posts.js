@@ -14,8 +14,6 @@ const AllPosts = () => {
   const dispatch = useDispatch()
   const posts = useSelector(state => state.posts)
 
-  console.log(posts)
-
   useEffect(async () => {
     await dispatch(findAllPosts())
     await dispatch(findAllCategories())
@@ -28,7 +26,7 @@ const AllPosts = () => {
         <div className="homepage_posts_page">
           {
             posts?.length && posts.map((post) => (
-              <div className="each_post_page">
+              <div className="each_post_page" key={post.id}>
                 <NavLink key={post.id} to={`/posts/${post.id}`}>
                   <img src={post.image ? post.image : defaultImage} alt="post-image" />
                   <h3 className="post_title">{post.post_title}</h3>

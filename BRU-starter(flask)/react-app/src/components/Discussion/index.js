@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { findAllCategories } from '../../store/category'
+// import { findAllCategories } from '../../store/category'
 import { NavLink, useHistory, useParams } from 'react-router-dom';
 import { findOneDiscussion } from '../../store/oneDiscussion'
 import { delExistingDiscussion } from '../../store/discussions'
@@ -18,7 +18,7 @@ const PostPage = (props) => {
     const { discussionId } = useParams();
 
     useEffect(async () => {
-        await dispatch(findAllCategories())
+        // await dispatch(findAllCategories())
         await dispatch(findOneDiscussion(discussionId))
     }, [dispatch])
 
