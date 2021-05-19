@@ -5,13 +5,24 @@
     width: fit-content;
     margin-top: 20px;
 }
-.search_posts {
+.search_div {
     text-align: center;
-    color: var(--red);
+}
+.search_posts {
+    display: inline-block;
     margin-top: 20px;
+    position: relative;
+    right: 34px;
 }
 .search_discussions {
-    text-align: center;
-    color: var(--red);
-    margin-top: 20px;
+    margin-top: 40px;
+    display: inline-block;
+    position: relative;
+    right: 34px;
+}
+.search_stripes {
+    width: 90px;
+}
+.search_stripes1 {
+    width: 90px;
 }

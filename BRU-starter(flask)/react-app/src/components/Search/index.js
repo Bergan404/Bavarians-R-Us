@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useHistory, useParams } from 'react-router-dom';
 import defaultImage from '../default_image.png'
+import stripes from '../stripes.png'
 
 import './Search.css'
 
@@ -26,7 +27,10 @@ const SearchPage = () => {
   return (
     <>
       <h1 className="search_header" >Search Results</h1>
-      <h2 className="search_posts" >Posts</h2>
+      <div className="search_div" >
+        <img src={stripes} alt="stripes" className="search_stripes" />
+        <h1 className="search_posts" >Posts</h1>
+      </div>
       <div className="homepage_posts_page">
         {
           newSearch?.map((post) => (
@@ -40,7 +44,10 @@ const SearchPage = () => {
           ))
         }
       </div>
-      <h2 className="search_discussions" >Discussions</h2>
+      <div className="search_div" >
+        <img src={stripes} alt="stripes" className="search_stripes1" />
+        <h1 className="search_discussions" >Discussions</h1>
+      </div>
       <div className="homepage_discussions_page">
         {
           newerSearch?.map((discussion) => (
