@@ -20,6 +20,7 @@ class User(db.Model, UserMixin):
     user_review = db.relationship('Review', back_populates="creator_review")
     creator_reply = db.relationship('Reply', back_populates="user_reply")
     creator_cart = db.relationship('ShoppingCart', back_populates='user_cart')
+    reply_user_user = db.relationship('UserReply', back_populates='user_user_reply')
 
     @property
     def password(self):
@@ -162,6 +163,7 @@ class Reply(db.Model):
     user_reply = db.relationship('User', back_populates="creator_reply")
     user_discussion = db.relationship(
         'Discussion', back_populates="discussion_post")
+    user_to_reply = db.relationship('UserReply', back_populates="reply_to_user")
 
     def to_dict(self):
         return {
@@ -171,7 +173,38 @@ class Reply(db.Model):
             "body": self.body,
             "created_at": self.created_at,
             "author": self.user_reply.username,
-            "author_image": self.user_reply.image
+            "author_image": self.user_reply.image,
+            "reply": [userReply.to_dict() for userReply in self.user_to_reply],
+        }
+
+
+# ------------------------------User to User Replies Table ----------------------------------
+
+
+class UserReply(db.Model):
+    __tablename__ = 'userreplies'
+
+    id = db.Column(db.Integer, primary_key=True)
+    userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    replyId = db.Column(db.Integer, db.ForeignKey(
+        'replies.id'), nullable=False)
+    body = db.Column(db.Text)
+    created_at = db.Column(db.DateTime)
+
+    # Relations
+    user_user_reply = db.relationship('User', back_populates="reply_user_user")
+    reply_to_user = db.relationship(
+        'Reply', back_populates="user_to_reply")
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "userId": self.userId,
+            "replyId": self.replyId,
+            "body": self.body,
+            "created_at": self.created_at,
+            "author": self.user_user_reply.username,
+            "author_image": self.user_user_reply.image
         }
 
 # ------------------------------Categories Table ----------------------------------

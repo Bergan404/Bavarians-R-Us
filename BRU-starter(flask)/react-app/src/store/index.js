@@ -12,6 +12,7 @@ import addThePost from './add_post'
 import reviews from './reviews'
 import oneCategory from './oneCategory'
 import allUsers from './all_users'
+import userToUser from './user_to_user_reply'
 
 
 const rootReducer = combineReducers({
@@ -26,7 +27,8 @@ const rootReducer = combineReducers({
     oneCategory,
     addThePost,
     reviews,
-    allUsers
+    allUsers,
+    userToUser
 });
 
 let enhancer;

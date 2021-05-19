@@ -1,27 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory, useParams } from "react-router-dom";
-import { replyCreate } from '../../store/reply_create'
+import { userReplyCreate } from '../../store/user_to_user_reply'
 import { findOneDiscussion } from '../../store/oneDiscussion'
 
 import './review_reply.css';
 
-
-const ReplyForm = () => {
+const UserReplyForm = ({replyId}) => {
     const dispatch = useDispatch();
     const [body, setBody] = useState();
 
-    const { discussionId } = useParams();
+    // const { replyId } = useParams();
 
     useEffect(async () => {
-        await dispatch(findOneDiscussion(discussionId))
+        await dispatch(findOneDiscussion(replyId))
     }, [dispatch])
 
 
-    const onReplyCreation = async (e) => {
+    const onUserReplyCreation = async (e) => {
         // e.preventDefault();
-        await dispatch(replyCreate(body, discussionId));
-
+        await dispatch(userReplyCreate(body, replyId));
     }
 
     const updateBody = (e) => {
@@ -30,9 +28,8 @@ const ReplyForm = () => {
 
 
     return (
-        <form onSubmit={onReplyCreation}>
+        <form onSubmit={onUserReplyCreation}>
             <div className='server_div'>
-                <label className="reply_label">Leave a Reply</label>
                 <textarea value={body} onChange={updateBody} className="reply_text"/>
             </div>
             <div className="create">
@@ -42,4 +39,4 @@ const ReplyForm = () => {
     )
 }
 
-export default ReplyForm;
+export default UserReplyForm;

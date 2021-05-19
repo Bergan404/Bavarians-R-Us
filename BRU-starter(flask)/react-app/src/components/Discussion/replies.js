@@ -8,6 +8,7 @@ import Moment from "react-moment";
 import "moment-timezone";
 import defaultImage from '../default_user.jpeg'
 import { delExistingReply } from '../../store/reply_create'
+import UserReplyForm from '../auth/UserReplyForm'
 
 
 const ReplyPage = (props) => {
@@ -15,6 +16,8 @@ const ReplyPage = (props) => {
     const dispatch = useDispatch()
     const oneDiscussion = useSelector(state => state.oneDiscussion)
     const userId = useSelector(state => state.session.user.id)
+    const [showResults, setShowResults] = useState(false)
+    const [reveal, setReveal] = useState(false)
 
     const { postId } = useParams();
 
@@ -47,6 +50,10 @@ const ReplyPage = (props) => {
                     </div>
                     <p>{reply.body}</p>
                     <Moment local fromNow tz="Atlantic/Reykjavik" className="moment">{reply.created_at}</Moment>
+                    <button onClick={() => setReveal(!reveal)}>Reply</button>
+                    {
+                        reveal && <UserReplyForm replyId={reply.id} />
+                    }
                 </div>
             )).reverse()
           }

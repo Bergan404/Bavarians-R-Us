@@ -11,7 +11,6 @@ const deleteReply = () => ({
 })
 
 export const delExistingReply = (replyId) => async (dispatch) => {
-    console.log(replyId, "jfvnfvjnfvjnfvjnfvnfvfvnjnfv")
     await fetch('/api/replies/', {
         method: "DELETE",
         headers: {
