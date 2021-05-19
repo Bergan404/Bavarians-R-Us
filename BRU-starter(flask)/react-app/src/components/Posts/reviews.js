@@ -9,6 +9,7 @@ import { findAllUsers } from '../../store/all_users'
 import Moment from "react-moment";
 import "moment-timezone";
 import defaultImage from '../default_user.jpeg'
+import StarRatingComponent from 'react-star-rating-component';
 
 
 const ReviewPage = (props) => {
@@ -29,19 +30,30 @@ const ReviewPage = (props) => {
     return (
         <div>
             {
-                onePost.reviews?.length  === 0 ? <p className="cart_empty" >No Reviews Yet</p> : onePost.reviews?.map((review) =>(
+                onePost.reviews?.length === 0 ? <p className="cart_empty" >No Reviews Yet</p> : onePost.reviews?.map((review) => (
                     <>
                         <div className="review">
                             <div className="the_author">
-                                <img src={review.author_image ? review.author_image : defaultImage} alt="author_image" className="author_image"/>
-                                <h4 className="review_author">{review.author}</h4>
+                                <div>
+                                    <img src={review.author_image ? review.author_image : defaultImage} alt="author_image" className="author_image" />
+                                    <h4 className="review_author">{review.author}</h4>
+                                </div>
+                                <div className="star_rating">
+                                    <StarRatingComponent
+                                        name="rate2"
+                                        editing={false}
+                                        starCount={5}
+                                        starColor={"#e7222e"}
+                                        value={review.rating}
+                                    />
+                                </div>
                             </div>
                             <p>{review.body}</p>
                             <Moment local date={review.created_at} fromNow className="moment"></Moment>
                         </div>
                     </>
                 )).reverse()
-          }
+            }
         </div>
     )
 }

@@ -137,12 +137,15 @@
 }
 .the_author {
     display: flex;
+    justify-content: space-between;
     border-bottom: 2px solid black;
-    width: fit-content;
+    /* width: fit-content; */
     margin-bottom: 10px;
 }
 .review_author {
     margin-bottom: 8px;
+    display: inline-block;
+    position: absolute;
 }
 .author_image {
     width: 40px;
@@ -155,4 +158,7 @@
     font-size: 15px;
     color: #888888;
     margin-top: 10px;
+}
+.star_rating {
+
 }

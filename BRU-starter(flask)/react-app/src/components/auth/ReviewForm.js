@@ -39,13 +39,16 @@ const ReviewForm = () => {
     return (
         <form onSubmit={onReviewCreation}>
             <div className='server_div'>
-                <label className="review_label">Leave a Review {rating}</label>
-                <StarRatingComponent
-                    name="rate1"
-                    starCount={5}
-                    value={rating}
-                    onStarClick={onStarClick}
-                />
+                <label className="review_label">Leave a Review</label>
+                <div className="review_rating">
+                    <StarRatingComponent
+                        name="rate1"
+                        starCount={5}
+                        value={rating}
+                        onStarClick={onStarClick}
+                        starColor={"#e7222e"}
+                    />
+                </div>
                 <textarea value={body} onChange={updateBody} className="review_text" />
             </div>
             <div className="create">
