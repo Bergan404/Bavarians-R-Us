@@ -9,7 +9,6 @@ import banner1 from '../bmw-banner2.png'
 import defaultImage from '../default_image.png'
 import stripes from '../stripes.png'
 
-
 import './homepage.css'
 
 const HomePage = () => {

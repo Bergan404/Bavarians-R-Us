@@ -18,6 +18,7 @@
     margin: auto;
     min-width: 50%;
     min-height: 50%;
+    z-index: -1;
 }
 .login_form {
     width: 500px;
@@ -120,6 +121,7 @@
     margin: auto;
     min-width: 50%;
     min-height: 50%;
+    z-index: -1;
 }
 .signup_form {
     width: 500px;

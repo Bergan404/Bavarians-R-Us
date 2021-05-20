@@ -19,6 +19,7 @@
     width: 90px;
     left: 21em;
     top: 40px;
+    z-index: -1;
 }
 .homepage_discussions {
     display: flex;
@@ -87,7 +88,7 @@
     position: relative;
     left: 48px;
     top: 40px;
-
+    z-index: -1;
 }
 .all_posts h2 {
     /* margin-top: 20px; */

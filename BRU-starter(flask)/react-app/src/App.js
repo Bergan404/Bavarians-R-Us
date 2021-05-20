@@ -20,6 +20,7 @@ import AllPosts from '../src/components/Posts/all_posts'
 import ShoppingCart from '../src/components/ShoppingCart/index'
 import CategoryPage from '../src/components/Navbar/CategoryPage'
 import SearchPage from '../src/components/Search/index'
+import ProfilePage from '../src/components/Profile/index'
 
 function App() {
   // const [authenticated, setAuthenticated] = useState(false);
@@ -68,6 +69,9 @@ function App() {
         </Route>
         <Route path="/cart/:userId" exact={true}>
           <ShoppingCart />
+        </Route>
+        <Route path="/profile/:username" exact={true}>
+          <ProfilePage />
         </Route>
         <Route path="/category/:categoryId" exact={true}>
           <CategoryPage />

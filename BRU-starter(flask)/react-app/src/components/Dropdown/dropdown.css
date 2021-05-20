@@ -1,0 +1,33 @@
+.dropdown_image {
+    border: none;
+    position: relative;
+    bottom: 8px;
+}
+.dropdown_image:hover {
+    cursor: pointer;
+}
+.dropdown_profile_image {
+    width: 40px;
+    border-radius: 50px;
+    position: relative;
+    bottom: 2px;
+    margin-right: 6px;
+}
+.dropdown_dropdown {
+    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+}
+.dropdown_item {
+    padding: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.dropdown_dropdown a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-size: 18px;
+}

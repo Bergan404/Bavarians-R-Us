@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import logo from '../bmw-logo.png'
+import DropDown from '../Dropdown/index'
 
 import './navbar.css'
 
@@ -72,7 +73,8 @@ const NavBar = () => {
                 </NavLink>
               </div>
               <div className="right-components1" >
-                <LogoutButton />
+                {/* <LogoutButton /> */}
+                <DropDown />
               </div>
             </div>
           </>

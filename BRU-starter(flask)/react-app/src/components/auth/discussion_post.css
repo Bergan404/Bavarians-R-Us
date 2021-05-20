@@ -14,6 +14,7 @@
     margin: auto;
     min-width: 50%;
     min-height: 50%;
+    z-index: -1;
 }
 .discussion_form {
     width: 500px;
