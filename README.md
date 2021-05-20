@@ -1,7 +1,21 @@
 ![header](https://github.com/Bergan404/Bavarians-R-Us/blob/main/imagesForWiki/bmw-banner12.png)
 
 ## Welcome to Bavarians"R"Us
-***Bavarians"R"Us*** is a site that is made for the enthusiast, based off of FCPEuro, Users have the ability to come by and look at the recent discussions or the recent posts, they also have the option if they want to be able to create either or.
+***[Bavarians"R"Us](https://bavarians-r-us.herokuapp.com/)*** is a site that is made for the BMW enthusiast, based off of [FCPEuro](https://www.fcpeuro.com/), Users have the ability to come by and look at the recent discussions or the recent posts, they also have the option to be able to create a discussion or post, as well as purchase products.
+
+#### Technologies: React, Redux, Python, Flask, SQLAlchemy, CSS3
+
+The main goal of this full-stack project was to follow through with my mvp features, which include:
+
+- Posts - be able to post products that a user owns and wants to sell
+- Discussions - post discussions about topic that other users have the ability to give input
+- Shopping Cart - input products into cart with real time price updating for user to checkout
+- Reviews - be able to leave reviews on a certain product for users to decided if its a good purchase
+- Replies - be able to reply to users dicussions and other users can reply to the users reply
+
+In addition to the mvp features I was able to implement some of my bonus features:
+
+- Search - users can search for specific products and specific discussions
 
 ## The Home Page
 ![homepage](https://github.com/Bergan404/Bavarians-R-Us/blob/main/imagesForWiki/Screen%20Shot%202021-05-12%20at%2011.29.14%20AM.png)
