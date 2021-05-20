@@ -2,6 +2,8 @@
     border: none;
     position: relative;
     bottom: 8px;
+    background: none;
+
 }
 .dropdown_image:hover {
     cursor: pointer;
@@ -11,7 +13,6 @@
     border-radius: 50px;
     position: relative;
     bottom: 2px;
-    margin-right: 6px;
 }
 .dropdown_dropdown {
     background-color: darkgray;
@@ -30,4 +31,8 @@
     text-align: center;
     color: black;
     font-size: 18px;
+    transition: color .3s ease-in-out;
+}
+.dropdown_dropdown a:hover {
+    color: var(--red);
 }

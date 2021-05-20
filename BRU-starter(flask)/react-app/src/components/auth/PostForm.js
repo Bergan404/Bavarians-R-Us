@@ -163,7 +163,7 @@ const PostForm = () => {
                     >
                         {
                             categories?.length && categories.map((category) => (
-                                <option value={category.id} className="post_option">{category.category}</option>
+                                <option  value={category.id} className="post_option">{category.category}</option>
                             ))
                         }
                     </select>
