@@ -56,6 +56,5 @@ This is the discussion page and this is where all the conversations will other u
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-***[Full Site](https://bavarians-r-us.herokuapp.com/)*** |
 ***[Full Wiki](https://github.com/Bergan404/Bavarians-R-Us/wiki)***
 
