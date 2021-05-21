@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import { findAllPosts } from '../../store/posts'
 import { findAllCategories } from '../../store/category'
+import { authenticate } from '../../store/session'
 import defaultImage from '../default_image.png'
 import ShippingForm from '../auth/ShippingForm'
+import stripes from '../stripes.png'
 
 import './profile.css'
 
@@ -16,21 +17,28 @@ const ProfilePage = () => {
 
     useEffect(async () => {
         await dispatch(findAllCategories())
-        if (sessionUser) {
-            dispatch(findAllPosts(sessionUser.id))
-        }
-    }, [sessionUser, dispatch])
+        await dispatch(authenticate())
+        // window.location.reload();
+    }, [dispatch])
 
     return (
         <>
             <h1 className="profile_username" >Welcome, {sessionUser.username}!</h1>
             <div className="profile_outerwrapper" >
                 <div>
-                    <h2 className="profile_divs" >Shipping Information</h2>
-                    <ShippingForm />
+                    <div className="search_div" >
+                        <img src={stripes} alt="stripes" className="search_stripes" />
+                        <h1 className="search_posts" >Shipping Information</h1>
+                    </div>
+                    <div className="profile_form_div" >
+                        <ShippingForm />
+                    </div>
                 </div>
                 <div>
-                    <h2 className="profile_divs" >Posts</h2>
+                    <div className="search_div" >
+                        <img src={stripes} alt="stripes" className="search_stripes" />
+                        <h1 className="search_posts" >Your Posts</h1>
+                    </div>
                     <div className="profile_posts_page">
                         {
                             sessionUserPosts?.length && sessionUserPosts.map((post) => (
@@ -44,7 +52,10 @@ const ProfilePage = () => {
                             ))
                         }
                     </div>
-                    <h2 className="profile_divs1" >Discussions</h2>
+                        <div className="search_div" >
+                            <img src={stripes} alt="stripes" className="search_stripes" />
+                            <h1 className="search_posts" >Your Discussions</h1>
+                        </div>
                     <div className="profile_discussions_page">
                         {
                             sessionUserDiscussions?.length && sessionUserDiscussions.map((discussion) => (

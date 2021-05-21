@@ -13,12 +13,14 @@
     margin-top: 20px;
     position: relative;
     right: 34px;
+    z-index: -1;
 }
 .search_discussions {
     margin-top: 40px;
     display: inline-block;
     position: relative;
     right: 34px;
+    z-index: -1;
 }
 .search_stripes {
     width: 90px;

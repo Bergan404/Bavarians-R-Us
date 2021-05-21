@@ -2,6 +2,11 @@
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-size: 40px;
+    border-bottom: 2px solid black;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
 }
 .profile_outerwrapper {
     display: flex;
@@ -41,6 +46,7 @@
     margin-bottom: 10px;
     margin-left: 10px;
     margin-right: 10px;
+    transition: background-color .3s ease-in-out;
 }
 .each_post_profile a {
     text-decoration: none;
@@ -58,6 +64,10 @@
     max-height: 32px;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+.each_post_profile:hover {
+    background-color: var(--darkgray);
+    cursor: pointer;
 }
 
 .each_discussion_profile {
@@ -100,7 +110,10 @@
     cursor: pointer;
 }
 
-
+.profile_form_div {
+    margin-left: 20px;
+    margin-right: 20px;
+}
 .shipping_form {
     width: 500px;
     border-radius: 15px;

@@ -14,9 +14,9 @@ class User(db.Model, UserMixin):
     image = db.Column(db.String(255))
 
     # Relations
-    post_creator = db.relationship('Post', back_populates="creator")
+    post_creator = db.relationship('Post', cascade="all,delete", back_populates="creator")
     discussion_creator = db.relationship(
-        'Discussion', back_populates='discussion')
+        'Discussion', cascade="all,delete", back_populates='discussion')
     user_review = db.relationship('Review', back_populates="creator_review")
     creator_reply = db.relationship('Reply', back_populates="user_reply")
     creator_cart = db.relationship('ShoppingCart', back_populates='user_cart')
