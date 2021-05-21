@@ -6,6 +6,7 @@
     position: sticky;
     top: 0;
     z-index: 1;
+    padding-top: 5px;
 }
 .nav_right {
     display: flex;
@@ -103,8 +104,7 @@
     background-color: var(--darkgray);
     position: -webkit-sticky;
     position: sticky;
-    top: 90px;
-    /* z-index: 1; */
+    top: 95px;
 }
 .category-display {
     display: flex;

@@ -1,11 +1,13 @@
 .all_posts_page {
     position: relative;
+    z-index: -1;
 }
 .stripes1 {
     position: relative;
     width: 90px;
     right: 5em;
     top: 35px;
+    z-index: -1;
 }
 .posts_center {
     text-align: center;
@@ -14,7 +16,6 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    /* background-color: var(--lightgray); */
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -22,12 +23,17 @@
     text-align: center;
 }
 .each_post_page {
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 20px;
     background-color: var(--black);
-    width: 250px;
+    width: 200px;
     height: fit-content;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color .3s ease-in-out;
 }
 .each_post_page a {
     text-decoration: none;
@@ -35,6 +41,7 @@
 }
 .each_post_page img {
     width: 200px;
+    height: 200px;
 }
 .each_post_page p {
     word-break: break-word;

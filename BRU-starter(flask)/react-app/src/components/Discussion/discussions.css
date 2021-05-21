@@ -3,12 +3,14 @@
     width: 90px;
     right: 8em;
     top: 35px;
+    z-index: -1;
 }
 .discussion_center {
     text-align: center;
 }
 .all_discussions_page {
     position: relative;
+    z-index: -1;
 }
 .homepage_discussions_page {
     display: flex;

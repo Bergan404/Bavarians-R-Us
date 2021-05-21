@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { findAllDiscussions } from '../../store/discussions'
 import { findAllPosts } from '../../store/posts'
 import { findAllCategories } from '../../store/category'
-// import { findAllUsers } from '../../store/all_users'
 import { NavLink, useHistory } from 'react-router-dom';
 import banner1 from '../bmw-banner2.png'
 import defaultImage from '../default_image.png'
@@ -19,7 +18,6 @@ const HomePage = () => {
   const posts = useSelector(state => state.posts)
 
   useEffect(async () => {
-    // await dispatch(findAllUsers())
     await dispatch(findAllDiscussions())
     await dispatch(findAllPosts())
     await dispatch(findAllCategories())
