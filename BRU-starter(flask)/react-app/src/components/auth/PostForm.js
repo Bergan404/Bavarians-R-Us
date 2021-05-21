@@ -96,7 +96,7 @@ const PostForm = () => {
                         type="file"
                         accept="image/*"
                         onChange={updateImage}
-                        className='post_input_image'
+                        className='discussion_input_image'
                     />
                 </div>
                 <div className='post_div'>

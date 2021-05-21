@@ -77,7 +77,7 @@ const SignUpForm = () => {
             placeholder="Select Image"
             accept="image/*"
             onChange={updateImage}
-            className="signup_inputs_label"
+            className="discussion_input_image"
           ></input>
         </div>
         <div className="signup_divs">
