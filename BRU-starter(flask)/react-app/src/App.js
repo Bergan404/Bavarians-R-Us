@@ -55,18 +55,18 @@ function App() {
         <Route path="/create-discussion" exact={true}>
           <DiscussionForm />
         </Route>
-        <Route path="/posts/:postId" exact={true}>
+        <ProtectedRoute path="/posts/:postId" exact={true}>
           <PostPage />
-        </Route>
-        <Route path="/discussion/:discussionId" exact={true}>
+        </ProtectedRoute>
+        <ProtectedRoute path="/discussion/:discussionId" exact={true}>
           <DiscussionPage />
-        </Route>
-        <Route path="/discussions" exact={true}>
+        </ProtectedRoute>
+        <ProtectedRoute path="/discussions" exact={true}>
           <AllDiscussions />
-        </Route>
-        <Route path="/posts" exact={true}>
+        </ProtectedRoute>
+        <ProtectedRoute path="/posts" exact={true}>
           <AllPosts />
-        </Route>
+        </ProtectedRoute>
         <Route path="/cart/:userId" exact={true}>
           <ShoppingCart />
         </Route>
