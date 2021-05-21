@@ -1,0 +1,9 @@
+.profile_username {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.profile_outerwrapper {
+    display: flex;
+    justify-content: space-around;
+}

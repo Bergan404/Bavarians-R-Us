@@ -39,6 +39,8 @@ class User(db.Model, UserMixin):
             "username": self.username,
             "email": self.email,
             "image": self.image,
+            "posts": [post.to_dict() for post in self.post_creator],
+            "discussions": [discussion.to_dict() for discussion in self.discussion_creator]
         }
 
 
