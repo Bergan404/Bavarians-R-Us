@@ -56,6 +56,10 @@
     width: 200px;
 }
 .each_post_profile p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;

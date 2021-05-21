@@ -5,10 +5,7 @@ import { NavLink, useHistory, useParams } from 'react-router-dom';
 import { addThePost } from '../../store/add_post';
 import defaultImage from '../default_image.png'
 
-
-import './shoppingcart.css'
-
-const ShoppingCart = () => {
+const Checkout = () => {
     const history = useHistory()
     const dispatch = useDispatch()
     const user = useSelector(state => state.session.user)
@@ -23,25 +20,17 @@ const ShoppingCart = () => {
         })
     }
 
-    const { postId } = useParams();
-
     useEffect(async () => {
         await dispatch(findAllCategories())
     }, [dispatch])
 
-    const checkOut = async (e) => {
-        e.preventDefault();
-
-        history.push(`/checkout/${user.id}`)
-    }
-
     return (
         <>
-            <h1 className="cart_header" >Shopping Cart</h1>
-            <div className="cart_posts" >
+            <h1 className="checkout_header" >Thank You For Your Purchase {user.username}!</h1>
+            <div className="checkout_posts" >
                 {
-                    addThePost?.length === 0 ? <p className="cart_empty" >Cart Is Empty</p> : addThePost.map((post) => (
-                        <div className="each_post" key={post.id}>
+                    addThePost?.length === 0 ? <p className="cart_empty" >Your Cart Was Empty</p> : addThePost.map((post) => (
+                        <div className="each_post_checkout" key={post.id}>
                             <NavLink key={post.id} to={`/posts/${post.id}`}>
                                 <img src={post.image ? post.image : defaultImage} alt="post-image" />
                                 <h3 className="post_title">{post.post_title}</h3>
@@ -52,13 +41,10 @@ const ShoppingCart = () => {
                     ))
                 }
             </div>
-            <h3 className="total">Total: ${total}</h3>
-            <div className="checkout_button_div">
-                <button type="submit" className="checkout_button" onClick={checkOut}>Checkout</button>
-            </div>
+            <h3 className="checkout_total">Grand Total: ${total}</h3>
         </>
     )
 }
 
 
-export default ShoppingCart;
+export default Checkout;

@@ -18,7 +18,6 @@ const ProfilePage = () => {
     useEffect(async () => {
         await dispatch(findAllCategories())
         await dispatch(authenticate())
-        // window.location.reload();
     }, [dispatch])
 
     return (
@@ -41,7 +40,7 @@ const ProfilePage = () => {
                     </div>
                     <div className="profile_posts_page">
                         {
-                            sessionUserPosts?.length && sessionUserPosts.map((post) => (
+                            sessionUserPosts?.length === 0 ? <p className="cart_empty" >No Posts Yet</p> : sessionUserPosts.map((post) => (
                                 <div className="each_post_profile" key={post.id}>
                                     <NavLink key={post.id} to={`/posts/${post.id}`}>
                                         <img src={post.image ? post.image : defaultImage} alt="post-image" />
@@ -58,7 +57,7 @@ const ProfilePage = () => {
                         </div>
                     <div className="profile_discussions_page">
                         {
-                            sessionUserDiscussions?.length && sessionUserDiscussions.map((discussion) => (
+                            sessionUserDiscussions?.length === 0 ? <p className="cart_empty" >No Discussions Yet</p> : sessionUserDiscussions.map((discussion) => (
                                 <div className="each_discussion_profile" key={discussion.id}>
                                     <NavLink key={discussion.id} to={`/discussion/${discussion.id}`}>
                                         <h3 className="discussion_title">{discussion.discussion_title}</h3>
