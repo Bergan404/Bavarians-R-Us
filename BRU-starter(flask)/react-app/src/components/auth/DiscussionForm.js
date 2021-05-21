@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Redirect, useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { discussionCreate } from '../../store/discussion_create'
 
 import './discussion_post.css';
@@ -8,11 +8,9 @@ import './discussion_post.css';
 const DiscussionForm = () => {
     const history = useHistory()
     const dispatch = useDispatch();
-    const [errors, setErrors] = useState([]);
     const [discussionTitle, setDiscussionTitle] = useState('')
     const [body, setBody] = useState('');
     const [image, setImage] = useState(null);
-    // const [image, setImage] = useState('');
 
 
     const onDiscussionCreation = async (e) => {
@@ -43,11 +41,6 @@ const DiscussionForm = () => {
     return (
         <div className="discussion_background">
             <form onSubmit={onDiscussionCreation} className="discussion_form">
-                <div>
-                    {errors.map((error) => (
-                        <div>{error}</div>
-                    ))}
-                </div>
                 <div className='discussion_div'>
                     <label htmlFor="discussionTitle" className="discussion_label">Discussion Title</label>
                     <input

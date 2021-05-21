@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink, useHistory, useParams } from 'react-router-dom';
 import Moment from "react-moment";
 import "moment-timezone";
 import defaultImage from '../default_user.jpeg'
@@ -10,12 +9,9 @@ import UserReplyPage from '../Discussion/user_to_user_reply'
 
 
 const RepliesPage = ({reply}) => {
-    const history = useHistory()
     const dispatch = useDispatch()
     const userId = useSelector(state => state.session.user.id)
     const [reveal, setReveal] = useState(false)
-
-    const { postId } = useParams();
 
     const handleReplyDelete = async (e, replyId) => {
 		dispatch(delExistingReply(replyId));

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
-import LogoutButton from '../auth/LogoutButton';
 import logo from '../bmw-logo.png'
 import DropDown from '../Dropdown/index'
 

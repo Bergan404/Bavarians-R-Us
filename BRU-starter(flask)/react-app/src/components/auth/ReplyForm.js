@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Redirect, useHistory, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 import { replyCreate } from '../../store/reply_create'
 import { findOneDiscussion } from '../../store/oneDiscussion'
 

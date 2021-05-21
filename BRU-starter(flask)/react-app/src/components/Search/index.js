@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, useHistory, useParams } from 'react-router-dom';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { NavLink, useParams } from 'react-router-dom';
 import defaultImage from '../default_image.png'
 import stripes from '../stripes.png'
 
@@ -36,7 +36,7 @@ const SearchPage = () => {
           newSearch?.map((post) => (
             <div className='each_post_page' key={post.id}>
               <NavLink to={`/posts/${post.id}`} className='searchDiv'>
-                <img src={post.image ? post.image : defaultImage} alt="post-image" />
+                <img src={post.image ? post.image : defaultImage} alt="post" />
                 <h3 className="post_title">{post.post_title}</h3>
                 <p>{post.description}</p>
               </NavLink>
@@ -54,7 +54,7 @@ const SearchPage = () => {
             <div className="each_discussion" key={discussion.id}>
               <NavLink key={discussion.id} to={`/discussion/${discussion.id}`}>
                 <h3 className="discussion_title">{discussion.discussion_title}</h3>
-                <img src={discussion.image ? discussion.image : defaultImage} alt="discussion-image" />
+                <img src={discussion.image ? discussion.image : defaultImage} alt="discussion" />
                 <p>{discussion.body}</p>
               </NavLink>
             </div>

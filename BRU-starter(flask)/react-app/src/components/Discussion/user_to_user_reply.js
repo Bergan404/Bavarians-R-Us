@@ -1,14 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
-import { NavLink, useHistory, useParams } from 'react-router-dom';
-import Moment from "react-moment";
-import "moment-timezone";
+import React from 'react';
 import defaultImage from '../default_user.jpeg'
 
 
 const UserReplyPage = ({reply}) => {
-    const userReply = useSelector(state => state.oneDiscussion)
-    const userId = useSelector(state => state.session.user.id)
 
     return (
         <div>

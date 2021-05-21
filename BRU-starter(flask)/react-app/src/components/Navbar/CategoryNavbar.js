@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import './navbar.css'
 
 const CategoryNavbar = () => {
-  const user = useSelector(state => state.session.user)
   const categories = useSelector(state => state.categories.categories)
 
   return (

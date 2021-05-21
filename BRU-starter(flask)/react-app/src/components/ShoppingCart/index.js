@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { findAllCategories } from '../../store/category'
-import { NavLink, useHistory, useParams } from 'react-router-dom';
-import { addThePost } from '../../store/add_post';
+import { NavLink, useHistory } from 'react-router-dom';
 import defaultImage from '../default_image.png'
 
 
@@ -13,7 +12,6 @@ const ShoppingCart = () => {
     const dispatch = useDispatch()
     const user = useSelector(state => state.session.user)
     const addThePost = useSelector(state => state.addThePost)
-    const userId = useSelector(state => state.session.user.id)
     let total = 0;
     if (addThePost) {
         const itemTotal = addThePost.forEach(item => {
@@ -22,8 +20,6 @@ const ShoppingCart = () => {
             return total
         })
     }
-
-    const { postId } = useParams();
 
     useEffect(async () => {
         await dispatch(findAllCategories())
