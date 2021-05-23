@@ -4,7 +4,7 @@ import { findAllDiscussions } from '../../store/discussions'
 import { findAllPosts } from '../../store/posts'
 import { findAllCategories } from '../../store/category'
 import { NavLink, useHistory } from 'react-router-dom';
-import banner1 from '../bmw-banner2.png'
+import banner1 from '../site_banner.png'
 import defaultImage from '../default_image.png'
 import stripes from '../stripes.png'
 
