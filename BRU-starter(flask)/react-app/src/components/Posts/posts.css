@@ -14,9 +14,9 @@
 }
 .homepage_posts_page {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
-    width: 1200px;
+    /* width: 1200px; */
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
