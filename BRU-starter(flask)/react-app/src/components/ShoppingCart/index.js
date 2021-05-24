@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { findAllCategories } from '../../store/category'
 import { NavLink, useHistory } from 'react-router-dom';
+import { delExistingCart } from '../../store/add_post'
 import defaultImage from '../default_image.png'
 
 
@@ -12,6 +13,7 @@ const ShoppingCart = () => {
     const dispatch = useDispatch()
     const user = useSelector(state => state.session.user)
     const addThePost = useSelector(state => state.addThePost)
+    
     let total = 0;
     if (addThePost) {
         const itemTotal = addThePost.forEach(item => {
@@ -31,6 +33,11 @@ const ShoppingCart = () => {
         history.push(`/checkout/${user.id}`)
     }
 
+    const handleCartDelete = async (e) => {
+		e.preventDefault();
+		dispatch(delExistingCart(addThePost.id));
+	};
+
     return (
         <>
             <h1 className="cart_header" >Shopping Cart</h1>
@@ -38,6 +45,7 @@ const ShoppingCart = () => {
                 {
                     addThePost?.length === 0 ? <p className="cart_empty" >Cart Is Empty</p> : addThePost.map((post) => (
                         <div className="each_post" key={post.id}>
+                            <button className="delete-button" onClick={handleCartDelete} >Delete</button>
                             <NavLink key={post.id} to={`/posts/${post.id}`}>
                                 <img src={post.image ? post.image : defaultImage} alt="post-image" />
                                 <h3 className="post_title">{post.post_title}</h3>

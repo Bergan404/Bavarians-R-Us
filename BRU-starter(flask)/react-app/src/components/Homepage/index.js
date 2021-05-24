@@ -7,6 +7,7 @@ import { NavLink, useHistory } from 'react-router-dom';
 import banner1 from '../site_banner.png'
 import defaultImage from '../default_image.png'
 import stripes from '../stripes.png'
+import Footer from '../Footer/index'
 
 import './homepage.css'
 
@@ -26,6 +27,7 @@ const HomePage = () => {
   return (
     <div>
       <img src={banner1} alt="banner" className="banner_image"></img>
+      <Footer />
       <div className='dis_post_container' >
         <div>
           <NavLink to='/discussions' className="all_discussions" ><img src={stripes} alt="stripes"/><h2>Discussions</h2></NavLink>

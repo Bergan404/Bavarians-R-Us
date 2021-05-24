@@ -5,12 +5,15 @@
     /* background: linear-gradient(rgba(31, 40, 51, 0), rgba(22, 88, 142, 0.6)); */
     background-color: var(--darkgray);
     padding: 5px;
-    z-index: 3;
+    /* z-index: 3; */
     flex: auto;
-    position: fixed;
+    /* position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 100%; */
+    position: relative;
+    bottom: 4px;
+    z-index: -1;
 }
 .footer_att {
     text-decoration: none;

@@ -51,8 +51,6 @@ const PostPage = (props) => {
                 <p><strong>Year:</strong> {onePost.year}, <strong>Model:</strong> {onePost.model}</p>
                 <p className="post_price">{onePost.price}</p>
                 <p className="post_stock">{onePost.in_stock}</p>
-                {/* <p>{onePost.new_used}</p>
-                <p>{onePost.categoryId}</p> */}
                 <button className="add-to-cart-button" onClick={handleCartAdd} >Add To Cart</button>
             </div>
 

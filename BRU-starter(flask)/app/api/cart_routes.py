@@ -14,8 +14,17 @@ def addItem(id):
     postId = res["postId"]
     print(res)
     product = Post.query.filter(Post.id == postId).first()
-    cart = ShoppingCart.query.filter(ShoppingCart.userId == current_user.id).first()
+    cart = ShoppingCart.query.filter(
+        ShoppingCart.userId == current_user.id).first()
     cart_item = ShoppingCartPost(shopping_post=product, shopping=cart)
     db.session.add(cart_item)
     db.session.commit()
     return product.to_dict()
+
+
+@cart.route('/', methods=['DELETE'])
+def delete_post():
+    postId = request.json
+    post = ShoppingCartPost.query.get(postId)
+    db.session.delete(post)
+    db.session.commit()
