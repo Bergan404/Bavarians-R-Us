@@ -115,6 +115,10 @@
     text-decoration: none;
     color: white;
     font-size: 17px;
+    transition: color .3s ease-in-out;
+}
+.category:hover {
+    color:  var(--red);
 }
 .logout_button {
     position: relative;

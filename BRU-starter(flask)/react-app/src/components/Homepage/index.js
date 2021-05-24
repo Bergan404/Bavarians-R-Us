@@ -44,7 +44,7 @@ const HomePage = () => {
               }
             </div>
         </div>
-        <div>
+        <div className="homepage_custom-styling">
           <NavLink to='/posts' className="all_posts" ><img src={stripes} alt="stripes"/><h2>Posts</h2></NavLink>
             <div className="homepage_posts" >
               {

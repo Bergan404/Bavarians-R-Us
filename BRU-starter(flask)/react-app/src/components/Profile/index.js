@@ -33,7 +33,7 @@ const ProfilePage = () => {
                         <ShippingForm />
                     </div>
                 </div>
-                <div>
+                <div className="profile_custom_styling">
                     <div className="search_div" >
                         <img src={stripes} alt="stripes" className="search_stripes" />
                         <h1 className="search_posts" >Your Posts</h1>
@@ -51,10 +51,10 @@ const ProfilePage = () => {
                             ))
                         }
                     </div>
-                        <div className="search_div" >
-                            <img src={stripes} alt="stripes" className="search_stripes" />
-                            <h1 className="search_posts" >Your Discussions</h1>
-                        </div>
+                    <div className="search_div" >
+                        <img src={stripes} alt="stripes" className="search_stripes" />
+                        <h1 className="search_posts" >Your Discussions</h1>
+                    </div>
                     <div className="profile_discussions_page">
                         {
                             sessionUserDiscussions?.length === 0 ? <p className="cart_empty" >No Discussions Yet</p> : sessionUserDiscussions.map((discussion) => (

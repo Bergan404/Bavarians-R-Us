@@ -1,6 +1,9 @@
 .banner_image {
     width: 100%;
 }
+.homepage_custom-styling {
+    margin-bottom: 25px;
+}
 .dis_post_container {
     display: flex;
     justify-content: space-evenly;
