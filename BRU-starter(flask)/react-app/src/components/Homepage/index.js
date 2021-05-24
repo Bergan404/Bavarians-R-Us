@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { findAllDiscussions } from '../../store/discussions'
 import { findAllPosts } from '../../store/posts'
 import { findAllCategories } from '../../store/category'
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import banner1 from '../site_banner.png'
 import defaultImage from '../default_image.png'
 import stripes from '../stripes.png'
@@ -12,9 +12,7 @@ import Footer from '../Footer/index'
 import './homepage.css'
 
 const HomePage = () => {
-  const history = useHistory()
   const dispatch = useDispatch()
-  const user = useSelector(state => state.session.user)
   const discussions = useSelector(state => state.discussion)
   const posts = useSelector(state => state.posts)
 

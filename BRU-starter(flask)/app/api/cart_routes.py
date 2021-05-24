@@ -2,9 +2,19 @@ from flask import Blueprint, jsonify, session, request
 from app.models import db
 from app.models.user import ShoppingCart, ShoppingCartPost, Post
 from flask_login import current_user
+from sqlalchemy import and_
 
 
 cart = Blueprint('shoppingcart', __name__)
+
+
+@cart.route('/')
+def all_post():
+    cart = ShoppingCart.query.filter(
+        ShoppingCart.userId == current_user.id).first()
+    certainPost = ShoppingCartPost.query.filter(
+        ShoppingCartPost.shoppingCartId == cart.id)
+    return {"posts": [post.to_dict() for post in certainPost]}
 
 
 @cart.route('/<int:id>', methods=['POST'])
@@ -25,6 +35,10 @@ def addItem(id):
 @cart.route('/', methods=['DELETE'])
 def delete_post():
     postId = request.json
-    post = ShoppingCartPost.query.get(postId)
-    db.session.delete(post)
+    cart = ShoppingCart.query.filter(
+        ShoppingCart.userId == current_user.id).first()
+    certainPost = ShoppingCartPost.query.filter(
+        and_(ShoppingCartPost.shoppingCartId == cart.id, ShoppingCartPost.postId == postId)).first()
+    db.session.delete(certainPost)
     db.session.commit()
+    return {"postId": postId}

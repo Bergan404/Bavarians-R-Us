@@ -50,7 +50,7 @@ export default function reducer(state = [], action) {
         case DELETE_POST:
             const newState = { ...state }
             delete newState[action.payload]
-            return newState
+            return Object.values(newState)
         default:
             return state;
     }

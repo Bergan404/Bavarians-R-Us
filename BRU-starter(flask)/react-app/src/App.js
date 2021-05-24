@@ -21,7 +21,6 @@ import CategoryPage from '../src/components/Navbar/CategoryPage'
 import SearchPage from '../src/components/Search/index'
 import ProfilePage from '../src/components/Profile/index'
 import Checkout from '../src/components/ShoppingCartCheckout/index'
-import Footer from '../src/components/Footer/index'
 
 function App() {
   // const [authenticated, setAuthenticated] = useState(false);
@@ -90,7 +89,6 @@ function App() {
           <HomePage />
         </Route>
       </Switch>
-      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { findAllCategories } from '../../store/category'
 import { NavLink, useHistory } from 'react-router-dom';
 import { delExistingCart } from '../../store/add_post'
+import { findAllItems } from '../../store/shopping_cart'
 import defaultImage from '../default_image.png'
 
 
@@ -13,7 +14,7 @@ const ShoppingCart = () => {
     const dispatch = useDispatch()
     const user = useSelector(state => state.session.user)
     const addThePost = useSelector(state => state.addThePost)
-    
+
     let total = 0;
     if (addThePost) {
         const itemTotal = addThePost.forEach(item => {
@@ -25,6 +26,7 @@ const ShoppingCart = () => {
 
     useEffect(async () => {
         await dispatch(findAllCategories())
+        await dispatch(findAllItems())
     }, [dispatch])
 
     const checkOut = async (e) => {
@@ -33,9 +35,10 @@ const ShoppingCart = () => {
         history.push(`/checkout/${user.id}`)
     }
 
-    const handleCartDelete = async (e) => {
+    const handleCartDelete = async (e, id) => {
 		e.preventDefault();
-		dispatch(delExistingCart(addThePost.id));
+		dispatch(delExistingCart(id));
+        window.location.reload()
 	};
 
     return (
@@ -45,12 +48,11 @@ const ShoppingCart = () => {
                 {
                     addThePost?.length === 0 ? <p className="cart_empty" >Cart Is Empty</p> : addThePost.map((post) => (
                         <div className="each_post" key={post.id}>
-                            <button className="delete-button" onClick={handleCartDelete} >Delete</button>
+                            <button className="delete-button" onClick={(e) => handleCartDelete(e, post.id)} >Delete</button>
                             <NavLink key={post.id} to={`/posts/${post.id}`}>
                                 <img src={post.image ? post.image : defaultImage} alt="post-image" />
                                 <h3 className="post_title">{post.post_title}</h3>
                                 <p>{post.description}</p>
-
                             </NavLink>
                         </div>
                     ))
