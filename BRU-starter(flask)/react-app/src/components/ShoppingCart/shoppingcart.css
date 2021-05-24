@@ -55,7 +55,7 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    width: 1200px;
+    width: 1000px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
@@ -75,6 +75,7 @@
 }
 .each_post_checkout img {
     width: 200px;
+    height: 200px;
 }
 .each_post_checkout p {
     margin-left: auto;

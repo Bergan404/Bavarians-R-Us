@@ -14,17 +14,15 @@
 }
 .homepage_posts_page {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    /* width: 1200px; */
+    width: 1000px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
     text-align: center;
 }
 .each_post_page {
-    margin-right: 20px;
-    margin-left: 20px;
     padding: 20px;
     background-color: var(--black);
     width: 200px;
@@ -52,6 +50,10 @@
     max-height: 32px;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+.each_post_page:hover {
+    background-color: var(--darkgray);
+    cursor: pointer;
 }
 
 
