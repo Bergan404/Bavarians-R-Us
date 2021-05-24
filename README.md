@@ -52,7 +52,7 @@ After a post is created the user will be brought to this page where they can see
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## The Discussion Page
-This is the discussion page and this is where all the conversations will other users will begin, a user can reply and chat with other users regarding the discussion at hand.
+This is the discussion page and this is where all the conversations with other users will begin, a user can reply and chat with other users regarding the discussion at hand.
 
 ![discussion_page](https://github.com/Bergan404/Bavarians-R-Us/blob/main/imagesForWiki/discussion_page.png)
 ![discussion_review](https://github.com/Bergan404/Bavarians-R-Us/blob/main/imagesForWiki/discussions_replies.png)
