@@ -14,6 +14,9 @@ const ShoppingCart = () => {
     const dispatch = useDispatch()
     const user = useSelector(state => state.session.user)
     const addThePost = useSelector(state => state.addThePost)
+    const allItems = useSelector(state => state.allItems)
+
+    // console.log(allItems)
 
     let total = 0;
     if (addThePost) {
@@ -38,7 +41,7 @@ const ShoppingCart = () => {
     const handleCartDelete = async (e, id) => {
 		e.preventDefault();
 		dispatch(delExistingCart(id));
-        window.location.reload()
+        // window.location.reload()
 	};
 
     return (
