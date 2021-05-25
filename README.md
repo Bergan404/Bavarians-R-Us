@@ -59,5 +59,27 @@ This is the discussion page and this is where all the conversations with other u
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
+## The Search Page
+This is the search page where a user can search either all posts or all discussions for something specific with a keyword.
+
+![search](https://github.com/Bergan404/Bavarians-R-Us/blob/main/imagesForWiki/search1.png)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+## The Cart Page
+On the cart page users can add items to their cart and have the option to checkout the items to purchase or have the option to take it out if they decide that they don't want it anymore.
+
+![cart_page](https://github.com/Bergan404/Bavarians-R-Us/blob/main/imagesForWiki/cart.png)
+![checkout](https://github.com/Bergan404/Bavarians-R-Us/blob/main/imagesForWiki/checkout.png)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+## The Profile Page
+On the profile page the user has to ability to see all the posts and discussions that they have created as well as save their shipping information(does not work)
+
+![profile_page](https://github.com/Bergan404/Bavarians-R-Us/blob/main/imagesForWiki/profile.png)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 ***[Full Wiki](https://github.com/Bergan404/Bavarians-R-Us/wiki)***
 
