@@ -16,7 +16,7 @@ const ShoppingCart = () => {
     const addThePost = useSelector(state => state.addThePost)
     const allItems = useSelector(state => state.allItems)
 
-    // console.log(allItems)
+    console.log(allItems)
 
     let total = 0;
     if (addThePost) {

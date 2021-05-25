@@ -14,13 +14,15 @@ class User(db.Model, UserMixin):
     image = db.Column(db.String(255))
 
     # Relations
-    post_creator = db.relationship('Post', cascade="all,delete", back_populates="creator")
+    post_creator = db.relationship(
+        'Post', cascade="all,delete", back_populates="creator")
     discussion_creator = db.relationship(
         'Discussion', cascade="all,delete", back_populates='discussion')
     user_review = db.relationship('Review', back_populates="creator_review")
     creator_reply = db.relationship('Reply', back_populates="user_reply")
     creator_cart = db.relationship('ShoppingCart', back_populates='user_cart')
-    reply_user_user = db.relationship('UserReply', back_populates='user_user_reply')
+    reply_user_user = db.relationship(
+        'UserReply', back_populates='user_user_reply')
 
     @property
     def password(self):
@@ -165,7 +167,8 @@ class Reply(db.Model):
     user_reply = db.relationship('User', back_populates="creator_reply")
     user_discussion = db.relationship(
         'Discussion', back_populates="discussion_post")
-    user_to_reply = db.relationship('UserReply', cascade="all,delete", back_populates="reply_to_user")
+    user_to_reply = db.relationship(
+        'UserReply', cascade="all,delete", back_populates="reply_to_user")
 
     def to_dict(self):
         return {
@@ -264,11 +267,16 @@ class ShoppingCartPost(db.Model):
 
     # Relations
     shopping = db.relationship('ShoppingCart', back_populates='cart')
-    shopping_post = db.relationship('Post', back_populates='shopping_cart')
+    shopping_post = db.relationship(
+        'Post', back_populates='shopping_cart')
 
     def to_dict(self):
         return {
             "id": self.id,
             'shoppingCartId': self.shoppingCartId,
-            'postId': self.postId
+            'postId': self.postId,
+            # "post": [post.to_dict() for post in self.shopping_post],
+            "post_title": self.shopping_post.post_title,
+            "description": self.shopping_post.description,
+            "image": self.shopping_post.image,
         }

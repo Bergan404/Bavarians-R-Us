@@ -14,7 +14,7 @@ def all_post():
         ShoppingCart.userId == current_user.id).first()
     certainPost = ShoppingCartPost.query.filter(
         ShoppingCartPost.shoppingCartId == cart.id)
-    return {"posts": [post.to_dict() for post in certainPost]}
+    return {"post": [post.to_dict() for post in certainPost]}
 
 
 @cart.route('/<int:id>', methods=['POST'])

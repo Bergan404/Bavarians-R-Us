@@ -1,9 +1,9 @@
 const ALL_CART_ITEMS = 'shopping_cart/ALL_CART_ITEMS';
 
 
-const allItems = (posts) => ({
+const allItems = (items) => ({
   type: ALL_CART_ITEMS,
-  payload: posts
+  payload: items
 })
 
 //thunk
@@ -13,8 +13,8 @@ export const findAllItems = () => async (dispatch) => {
     const items = await response.json();
     return dispatch(allItems(items));
   } else {
-      return null
   }
+  return null
 }
 
 
@@ -26,7 +26,7 @@ export default function cartReducer(state = {}, action) {
 
   switch (action.type) {
     case ALL_CART_ITEMS:
-      return action.payload.posts;
+      return action.payload.post;
     default:
       return state;
   }
