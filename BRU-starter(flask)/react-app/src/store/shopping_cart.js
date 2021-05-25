@@ -6,6 +6,22 @@ const allItems = (items) => ({
   payload: items
 })
 
+export const delExistingCart = (postId) => async (dispatch) => {
+  const response = await fetch('/api/cart/', {
+      method: "DELETE",
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify(postId)
+  })
+  if (response.ok) {
+    const posts = await response.json();
+    return dispatch(allItems(posts));
+  } else {
+  }
+  return null
+}
+
 //thunk
 export const findAllItems = () => async (dispatch) => {
   const response = await fetch('/api/cart/')
@@ -17,9 +33,6 @@ export const findAllItems = () => async (dispatch) => {
   return null
 }
 
-
-// reducer
-// const initialState = {};
 
 
 export default function cartReducer(state = {}, action) {

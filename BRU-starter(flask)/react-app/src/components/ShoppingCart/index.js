@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { findAllCategories } from '../../store/category'
 import { NavLink, useHistory } from 'react-router-dom';
-import { delExistingCart } from '../../store/add_post'
+import { delExistingCart } from '../../store/shopping_cart'
 import { findAllItems } from '../../store/shopping_cart'
 import defaultImage from '../default_image.png'
 
@@ -16,11 +16,9 @@ const ShoppingCart = () => {
     const addThePost = useSelector(state => state.addThePost)
     const allItems = useSelector(state => state.allItems)
 
-    console.log(allItems)
-
     let total = 0;
-    if (addThePost) {
-        const itemTotal = addThePost.forEach(item => {
+    if (allItems) {
+        allItems?.length && allItems.map(item => {
             let itemPrice = item.price.slice(1);
             total = total + +itemPrice
             return total
@@ -41,7 +39,6 @@ const ShoppingCart = () => {
     const handleCartDelete = async (e, id) => {
 		e.preventDefault();
 		dispatch(delExistingCart(id));
-        // window.location.reload()
 	};
 
     return (
@@ -49,9 +46,9 @@ const ShoppingCart = () => {
             <h1 className="cart_header" >Shopping Cart</h1>
             <div className="cart_posts" >
                 {
-                    addThePost?.length === 0 ? <p className="cart_empty" >Cart Is Empty</p> : addThePost.map((post) => (
+                    Object.values(allItems)?.length === 0 ? <p className="cart_empty" >Cart Is Empty</p> : Object.values(allItems)?.map((post) => (
                         <div className="each_post" key={post.id}>
-                            <button className="delete-button" onClick={(e) => handleCartDelete(e, post.id)} >Delete</button>
+                            <button className="remove-button" onClick={(e) => handleCartDelete(e, post.id)} >Remove</button>
                             <NavLink key={post.id} to={`/posts/${post.id}`}>
                                 <img src={post.image ? post.image : defaultImage} alt="post-image" />
                                 <h3 className="post_title">{post.post_title}</h3>

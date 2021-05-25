@@ -35,10 +35,16 @@ def addItem(id):
 @cart.route('/', methods=['DELETE'])
 def delete_post():
     postId = request.json
+    # cart = ShoppingCart.query.filter(
+    #     ShoppingCart.userId == current_user.id).first()
+    # print(cart, "=-=-=-=-=-=-=-=-4=-34==34-=4")
+    # certainPost = ShoppingCartPost.query.filter(
+    #     and_(ShoppingCartPost.shoppingCartId == cart.id, ShoppingCartPost.postId == postId)).first()
+    certainPost = ShoppingCartPost.query.get(postId)
     cart = ShoppingCart.query.filter(
         ShoppingCart.userId == current_user.id).first()
-    certainPost = ShoppingCartPost.query.filter(
-        and_(ShoppingCartPost.shoppingCartId == cart.id, ShoppingCartPost.postId == postId)).first()
+    certainPosts = ShoppingCartPost.query.filter(
+        ShoppingCartPost.shoppingCartId == cart.id)
     db.session.delete(certainPost)
     db.session.commit()
-    return {"postId": postId}
+    return {"post": [post.to_dict() for post in certainPosts]}

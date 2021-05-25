@@ -279,4 +279,5 @@ class ShoppingCartPost(db.Model):
             "post_title": self.shopping_post.post_title,
             "description": self.shopping_post.description,
             "image": self.shopping_post.image,
+            "price": self.shopping_post.price
         }
