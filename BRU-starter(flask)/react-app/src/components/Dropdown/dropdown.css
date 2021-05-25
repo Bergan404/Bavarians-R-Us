@@ -3,7 +3,6 @@
     position: relative;
     bottom: 8px;
     background: none;
-
 }
 .dropdown_image:hover {
     cursor: pointer;
@@ -20,6 +19,7 @@
     flex-direction: column;
     padding: 10px;
     border-radius: 10px;
+    z-index: 2;
 }
 .dropdown_item {
     padding: 3px;
